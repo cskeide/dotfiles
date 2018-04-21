@@ -90,8 +90,8 @@ unset use_color sh
 alias la='ls -la'
 alias ll='ls -l'
 
-# sudo completion
-complete -cf sudo
+# bash completion
+source /usr/share/bash-completion/bash_completion
 
 # up-arrow history
 bind '"\e[A": history-search-backward'

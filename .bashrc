@@ -74,7 +74,6 @@ if ${use_color} ; then
 	alias grep='grep --colour=auto'
 	alias egrep='egrep --colour=auto'
 	alias fgrep='fgrep --colour=auto'
-	alias pacman='pacman --color=auto'
 else
 	# show root@ when we don't have colors
 	PS1+='\u@\h \w \$ '

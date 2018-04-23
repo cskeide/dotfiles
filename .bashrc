@@ -86,9 +86,10 @@ done
 # Try to keep environment pollution down, EPA loves us.
 unset use_color sh
 
-# ls aliases
-alias la='ls -la'
-alias ll='ls -l'
+# Alias definitions.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 # bash completion
 source /usr/share/bash-completion/bash_completion

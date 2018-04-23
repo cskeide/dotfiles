@@ -6,3 +6,4 @@ ln -sfv "$DOTFILES_DIR/.bash_profile" ~
 ln -sfv "$DOTFILES_DIR/.bashrc" ~
 ln -sfv "$DOTFILES_DIR/.bash_aliases" ~
 ln -sfv "$DOTFILES_DIR/.nanorc" ~
+ln -sfv "$DOTFILES_DIR/.gitconfig" ~

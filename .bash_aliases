@@ -3,8 +3,8 @@
 #
 
 # ls aliases
-alias la='ls -la'
-alias ll='ls -l'
+alias la='ls -a'
+alias ll='ls -la'
 
 # use vim not vi
 alias vi='vim'

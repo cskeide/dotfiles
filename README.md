@@ -4,7 +4,6 @@
 * **.bash_aliases:** custom aliases goes here
 * **.nanorc:** nano syntax highlighting
 * **.vimrc:** vim configuration
-* **.gitconfig:** nothing here yet
 
 ## Installation
 **Warning:** This will overwrite exisiting dotfiles in your home directory with symlinks to the files in the .dotfiles directory. Use at your own risk!

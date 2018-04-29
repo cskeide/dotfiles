@@ -5,3 +5,12 @@
 * **.nanorc:** nano syntax highlighting
 * **.vimrc:** vim configuration
 * **.gitconfig:** nothing here yet
+
+## Installation
+**Warning:** This will overwrite exisiting dotfiles in your home directory with symlinks to the files in the .dotfiles directory. Use at your own risk!
+```bash
+cd ~
+git clone https://github.com/cskeide/dotfiles.git .dotfiles/
+cd .dotfiles
+./install.sh
+```

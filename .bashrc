@@ -92,7 +92,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # bash completion
-source /usr/share/bash-completion/bash_completion
+[[ -f /usr/share/bash-completion/bash_completion ]] && . /usr/share/bash-completion/bash_completion
 
 # up-arrow history
 bind '"\e[A": history-search-backward'

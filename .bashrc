@@ -18,7 +18,7 @@ shopt -s no_empty_cmd_completion
 shopt -s histappend
 
 # Save each command to the history file as it's executed.
-#PROMPT_COMMAND='history -a'
+PROMPT_COMMAND='history -a'
 
 # Change the window title of X terminals 
 case ${TERM} in

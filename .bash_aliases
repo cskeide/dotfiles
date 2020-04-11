@@ -20,3 +20,7 @@ alias df='df -H'
 alias du='du -ch'
 alias free='free -h'
 alias diff='colordiff'
+
+# mv and rm
+alias mv='mv -i'
+alias rm='rm -i'

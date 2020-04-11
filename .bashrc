@@ -5,6 +5,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 # Bash won't get SIGWINCH if another process is in the foreground.
 # Enable checkwinsize so that bash will check the terminal size when
 # it regains control.
@@ -18,7 +23,7 @@ shopt -s no_empty_cmd_completion
 shopt -s histappend
 
 # Save each command to the history file as it's executed.
-#PROMPT_COMMAND='history -a'
+PROMPT_COMMAND='history -a'
 
 # Change the window title of X terminals 
 case ${TERM} in

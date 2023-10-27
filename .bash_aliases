@@ -9,21 +9,29 @@ alias ll='ls -lAh'
 # use vim not vi
 alias vi='vim'
 
-# reboot / halt / poweroff
-alias reboot='sudo /sbin/reboot'
-alias poweroff='sudo /sbin/poweroff'
-alias halt='sudo /sbin/halt'
-alias shutdown='sudo /sbin/shutdown'
+# Privileged access
+if (( UID != 0 )); then
+    alias sudo='sudo '
+    alias scat='sudo cat'
+    alias svim='sudoedit'
+    alias root='sudo -i'
+    alias reboot='sudo systemctl reboot'
+    alias poweroff='sudo systemctl poweroff'
+fi
 
 # misc
 alias df='df -H'
 alias du='du -ch'
 alias free='free -h'
 alias diff='colordiff'
+alias grep='grep --color=auto'
+alias more='less'
 
-# mv and rm
+# Safety features
+alias cp='cp -i'
 alias mv='mv -i'
-alias rm='rm -i'
-
-# fix aliases when using sudo
-alias sudo='sudo '
+alias rm='rm -I'                    # 'rm -i' prompts for every file
+alias ln='ln -i'
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'

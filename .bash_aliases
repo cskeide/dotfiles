@@ -24,3 +24,6 @@ alias diff='colordiff'
 # mv and rm
 alias mv='mv -i'
 alias rm='rm -i'
+
+# fix aliases when using sudo
+alias sudo='sudo '

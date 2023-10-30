@@ -26,6 +26,7 @@ alias free='free -h'
 alias diff='colordiff'
 alias grep='grep --color=auto'
 alias more='less'
+alias ip='ip -c'
 
 # Safety features
 alias cp='cp -i'

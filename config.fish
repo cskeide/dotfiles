@@ -9,6 +9,7 @@ if status is-interactive
 
 	set EDITOR /usr/bin/vim
 	set GIT_EDITOR /usr/bin/vim
+	set fish_prompt_pwd_dir_length 0
 	
 	# ls aliases
 	alias la='ls -A'

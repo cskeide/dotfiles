@@ -2,9 +2,5 @@
 export DOTFILES_DIR
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-ln -sfv "$DOTFILES_DIR/.bash_profile" ~
-ln -sfv "$DOTFILES_DIR/.bashrc" ~
-ln -sfv "$DOTFILES_DIR/.bash_aliases" ~
-ln -sfv "$DOTFILES_DIR/.nanorc" ~
-ln -sfv "$DOTFILES_DIR/.vimrc" ~
-ln -sfv "$DOTFILES_DIR/config.fish" ~/.config/fish/config.fish
+rm -vf ~/.bashrc ~/.bash_profile ~/.bash_aliases ~/.config/fish/config.fish ~/.vimrc ~/.nanorc
+stow -v bash fish nano vim

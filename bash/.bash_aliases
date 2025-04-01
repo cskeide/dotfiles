@@ -36,3 +36,6 @@ alias ln='ln -i'
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
+
+# RPi
+alias temp='vcgencmd measure_temp'

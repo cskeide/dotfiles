@@ -38,4 +38,6 @@ alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
 # RPi
-alias temp='vcgencmd measure_temp'
+if grep -q Raspberry /proc/cpuinfo; then
+	alias temp='vcgencmd measure_temp'
+fi

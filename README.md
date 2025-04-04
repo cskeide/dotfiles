@@ -2,7 +2,9 @@
 * **.bash_profile:** based on ubuntu default
 * **.bashrc:** based on gentoo default with some minor modifications
 * **.bash_aliases:** a few aliases
+* **config.fish:** basic fish configuration
 * **.nanorc:** basic nano configuration
+* **.tmux.conf:** basic tmux configuration
 * **.vimrc:** basic vim configuration
 
 ## Installation

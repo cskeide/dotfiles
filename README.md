@@ -6,6 +6,9 @@
 * **.nanorc:** basic nano configuration
 * **.tmux.conf:** basic tmux configuration
 * **.vimrc:** basic vim configuration
+* **hypr:** hyprland configuration
+* **waybar:** waybar configuration
+* **wofi:** wofi configuration
 
 ## Installation
 **Warning:** This will overwrite exisiting dotfiles in your home directory with symlinks to the files in the .dotfiles directory. Use at your own risk!

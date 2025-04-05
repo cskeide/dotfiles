@@ -118,7 +118,7 @@
 		"format-en": "en",
 		"format-no": "no",
 		"interval": 1,
-		"keyboard-name": "gaming-keyboard",
-		"on-click": "hyprctl switchxkblayout gaming-keyboard next"
+		"keyboard-name": "at-translated-set-2-keyboard",
+		"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
 	}
 }

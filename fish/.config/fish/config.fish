@@ -33,6 +33,9 @@ if status is-interactive
 	alias du='du -ch'
 	alias free='free -h'
 	alias diff='colordiff'
+	if [ (echo $TERM) = 'xterm-kitty' ];
+		alias diff='kitten diff'
+	end
 	alias grep='grep --color=auto'
 	alias more='less'
 	alias ip='ip -c'

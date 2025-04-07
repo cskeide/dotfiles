@@ -33,7 +33,8 @@
 		},
 			"persistent-workspaces": {
 			"*": [2,3,4,5],
-			"DP-4": [1]
+			"DP-4": [1],
+			"DP-5": [1]
 		}
 	},
 	"tray": {
@@ -118,7 +119,7 @@
 		"format-en": "en",
 		"format-no": "no",
 		"interval": 1,
-		"keyboard-name": "at-translated-set-2-keyboard",
-		"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+		"keyboard-name": "logitech-usb-receiver-keyboard",
+		"on-click": "hyprctl switchxkblayout logitech-usb-receiver-keyboard next"
 	}
 }

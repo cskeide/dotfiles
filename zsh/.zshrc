@@ -42,8 +42,8 @@ bindkey -e
 bindkey '^[[3~' delete-char
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
-#bindkey '^p' history-search-backward
-#bindkey '^n' history-search-forward
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
 #bindkey '^[w' kill-region
 
 # History
@@ -82,4 +82,6 @@ fi
 # Oh My Posh
 if (xhost >& /dev/null); then
 	eval "$(oh-my-posh init zsh --config /home/cskeide/.cache/oh-my-posh/themes/catppuccin_mocha.omp.json)"
+else
+	PROMPT='%F{green}%n@%m %F{blue}%1~%f %# '
 fi

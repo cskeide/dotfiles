@@ -1,11 +1,12 @@
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+    export PATH="$HOME/bin:$PATH"
 fi
-
-# set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+if [ -d "/usr/local/bin" ] ; then
+    export PATH="/usr/local/bin:$PATH"
 fi
 
 # Set the directory we want to store zinit and plugins
@@ -38,7 +39,10 @@ autoload -Uz compinit && compinit
 zinit cdreplay -q
 
 # Keybindings
-#bindkey -e
+bindkey -e
+bindkey '^[[3~' delete-char
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
 #bindkey '^p' history-search-backward
 #bindkey '^n' history-search-forward
 #bindkey '^[w' kill-region
@@ -62,7 +66,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select
 
 # Aliases
-
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh" 
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'

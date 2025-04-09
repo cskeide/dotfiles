@@ -35,7 +35,6 @@ zinit snippet OMZP::command-not-found
 
 # Load completions
 autoload -Uz compinit && compinit
-
 zinit cdreplay -q
 
 # Keybindings
@@ -60,22 +59,27 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu select
-
-# Aliases
-[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh" 
+# Dircolors
+eval "$(dircolors -b)"
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu select
+
+# Include bash aliases if exists
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Kitty terminal alias for SSH
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh" 
+
+# Oh My Posh
 if (xhost >& /dev/null); then
 	eval "$(oh-my-posh init zsh --config /home/cskeide/.cache/oh-my-posh/themes/catppuccin_mocha.omp.json)"
 fi

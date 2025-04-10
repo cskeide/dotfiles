@@ -1,16 +1,16 @@
 # My dotfiles
 * **bash:** based on ubuntu and gentoo defaults with some minor modifications
 * **fish:** basic fish configuration
-* **zsh:** zsh configuration with zinit and oh my posh
+* **hypr:** hyprland configuration
+* **kitty:** kitty terminal configuration
 * **nano:** basic nano configuration
+* **starship:** starship catppuccin theme
 * **tmux:** basic tmux configuration
 * **vim:** basic vim configuration
-* **hypr:** hyprland configuration
 * **waybar:** waybar configuration
-* **wofi:** wofi menu configuration
 * **wlogout:** wlogout configuration
-* **kitty:** kitty terminal configuration
-* **starship:** starship catppuccin theme
+* **wofi:** wofi menu configuration
+* **zsh:** zsh configuration with zinit and oh my posh
 
 ## Installation
 **Warning:** This will overwrite exisiting dotfiles in your home directory with symlinks to the files in the .dotfiles directory. Use at your own risk!

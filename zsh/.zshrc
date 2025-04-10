@@ -33,6 +33,8 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
 
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
 # Load completions
 autoload -Uz compinit && compinit
 zinit cdreplay -q

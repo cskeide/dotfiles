@@ -75,6 +75,7 @@ zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Include bash aliases if exists
 if [ -f ~/.bash_aliases ]; then
@@ -92,3 +93,6 @@ if (xhost >& /dev/null); then
 else
 	PROMPT='%F{green}%n@%m %F{blue}%1~%f %# '
 fi
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)

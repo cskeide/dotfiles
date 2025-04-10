@@ -60,6 +60,8 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+setopt inc_append_history
+setopt hist_expire_dups_first
 
 # Dircolors
 eval "$(dircolors -b)"
@@ -76,11 +78,13 @@ zstyle ':completion:*' menu select
 
 # Include bash aliases if exists
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+    source ~/.bash_aliases
 fi
 
-# Kitty terminal alias for SSH
-[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh" 
+# Conditional alias for Kitty terminal
+if command -v kitty &>/dev/null && [ "$TERM" = "xterm-kitty" ]; then
+    alias ssh="kitty +kitten ssh"
+fi
 
 # Oh My Posh
 if (xhost >& /dev/null); then

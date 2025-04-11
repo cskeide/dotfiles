@@ -1,61 +1,124 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-
-Plugin 'mrk21/yaml-vim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"
+" ========================
+" Basic Settings
+" ========================
+set nocompatible              " Disable Vi compatibility
+filetype off                  " Required before using plugins
+set encoding=utf-8
+set number                    " Show line numbers
+set relativenumber            " Relative line numbers
+set cursorline                " Highlight current line
+set hidden                    " Allow buffer switching without saving
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set autoindent
+set clipboard=unnamedplus     " Use system clipboard
+set wildmenu
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
 syntax on
 
-set ttyfast
-set noerrorbells novisualbell
-set hlsearch
-set ignorecase smartcase
-set incsearch
-set showcmd
-set number
-set background=dark
+" ========================
+" Plugin Manager: vim-plug
+" ========================
 
-" nnoremap <Left> :echoe "Use h"<CR>
-" nnoremap <Right> :echoe "Use l"<CR>
-" nnoremap <Up> :echoe "Use k"<CR>
-" nnoremap <Down> :echoe "Use j"<CR>
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+" Color scheme
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+
+" File explorer
+Plug 'preservim/nerdtree'
+
+" Git integration
+Plug 'tpope/vim-fugitive'
+
+" Statusline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" LSP support & autocompletion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Syntax highlighting for many languages
+Plug 'sheerun/vim-polyglot'
+
+" Auto pairs for brackets
+Plug 'jiangmiao/auto-pairs'
+
+" Commenting
+Plug 'tpope/vim-commentary'
+
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
+" ========================
+" Color scheme
+" ========================
+set termguicolors
+set background=dark
+colorscheme catppuccin_mocha
+
+" ========================
+" coc.nvim (LSP & Completion)
+" ========================
+" Use tab for trigger completion with characters ahead and navigate
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+" Use K to show documentation
+nnoremap <silent> K :call CocActionAsync('doHover')<CR>
+
+" Auto format on save
+autocmd BufWritePre *.js,*.ts,*.py,*.go,*.rs,*.html,*.css,*.json,*.lua :silent! :CocCommand editor.action.formatDocument
+
+" ========================
+" NERDTree toggle
+" ========================
+nmap <C-n> :NERDTreeToggle<CR>
+
+" ========================
+" FZF keybinding
+" ========================
+nmap <C-p> :Files<CR>
+
+" ========================
+" Airline config
+" ========================
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='catppuccin_mocha'
+
+" ========================
+" Misc
+" ========================
+" Faster updates
+set updatetime=300
+
+" Remember cursor position
+augroup resCur
+  autocmd!
+  autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \ endif
+augroup END
+

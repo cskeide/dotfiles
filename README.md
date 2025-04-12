@@ -4,6 +4,7 @@
 * **hypr:** hyprland configuration
 * **kitty:** kitty terminal configuration
 * **nano:** basic nano configuration
+* **nvim:** nvim configuration with essential plugins
 * **starship:** starship catppuccin theme
 * **tmux:** basic tmux configuration
 * **vim:** basic vim configuration

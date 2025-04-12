@@ -3,5 +3,5 @@ export DOTFILES_DIR
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd $DOTFILES_DIR
-rm -vr ~/.bash_aliases ~/.bash_profile ~/.bashrc ~/.config/fish/config.fish ~/.vimrc ~/.nanorc ~/.tmux.conf ~/.config/hypr ~/.config/waybar ~/.config/wofi ~/.config/kitty ~/.config/wlogout ~/.zshrc
-stow -v bash fish vim nano tmux hypr waybar wofi kitty wlogout zsh
+rm -vr ~/.bash_aliases ~/.bash_profile ~/.bashrc ~/.config/fish/config.fish ~/.vimrc ~/.nanorc ~/.tmux.conf ~/.config/hypr ~/.config/waybar ~/.config/wofi ~/.config/kitty ~/.config/wlogout ~/.zshrc ~/.config/nvim
+stow -v bash fish vim nano tmux hypr waybar wofi kitty wlogout zsh nvim

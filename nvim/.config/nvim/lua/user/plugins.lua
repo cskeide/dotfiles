@@ -41,7 +41,7 @@ require("lazy").setup({
   { "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" } },
 
   -- Status line
-  { "nvim-lualine/lualine.nvim", dependencies = { "vim-tree/nvim-web-devicons" } },
+  { "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 
   -- Telescope (fuzzy finder)
   { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },

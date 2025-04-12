@@ -45,7 +45,12 @@ require("lazy").setup({
 
   -- Telescope (fuzzy finder)
   { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+  -- Git plugin
+  { 'tpope/vim-fugitive' }
+,
 })
+
+require("nvim-tree").setup()
 
 require('lualine').setup {
   options = {
@@ -53,8 +58,6 @@ require('lualine').setup {
     theme = 'catppuccin'
   }
 }
-
-require("nvim-tree").setup()
 
 require("telescope").setup {
   pickers = {

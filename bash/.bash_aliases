@@ -6,9 +6,13 @@
 alias la='ls -A'
 alias ll='ls -lAh'
 
-# use nvim not vi or vim
-alias vi='nvim'
-alias vim='nvim'
+# Set 'vi' and 'vim' aliases based on availability
+if command -v nvim >/dev/null 2>&1; then
+    alias vi='nvim'
+    alias vim='nvim'
+elif command -v vim >/dev/null 2>&1; then
+    alias vi='vim'
+fi
 
 # Privileged access
 if (( UID != 0 )); then

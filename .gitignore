@@ -3,3 +3,4 @@
 .gitconfig
 monitors.conf
 inputs.conf
+.luarc.json

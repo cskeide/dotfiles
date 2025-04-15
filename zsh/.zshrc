@@ -1,4 +1,4 @@
-# set PATH so it includes user's private bin if it exists
+# Set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     export PATH="$HOME/bin:$PATH"
 fi
@@ -7,6 +7,18 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 if [ -d "/usr/local/bin" ] ; then
     export PATH="/usr/local/bin:$PATH"
+fi
+
+# Set default EDITOR/VISUAL
+if command -v nvim >/dev/null 2>&1; then
+    export EDITOR='nvim'
+    export VISUAL='nvim'
+elif command -v vim >/dev/null 2>&1; then
+    export EDITOR='vim'
+    export VISUAL='vim'
+elif command -v vi >/dev/null 2>&1; then
+    export EDITOR='vi'
+    export VISUAL='vi'
 fi
 
 # Set the directory we want to store zinit and plugins
@@ -33,11 +45,12 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
 
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-
 # Load completions
 autoload -Uz compinit && compinit
 zinit cdreplay -q
+
+# Autosuggest based on both history and completion
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Keybindings
 bindkey -e
@@ -83,8 +96,9 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Conditional alias for Kitty terminal
-if command -v kitty &>/dev/null && [ "$TERM" = "xterm-kitty" ]; then
-    alias ssh="kitty +kitten ssh"
+if [[ -n "$KITTY_WINDOW_ID" ]]; then
+  alias diff="kitty +kitten diff"
+  alias ssh="kitty +kitten ssh"
 fi
 
 # Oh My Posh

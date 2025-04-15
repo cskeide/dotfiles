@@ -8,8 +8,8 @@ set number                    " Show line numbers
 set relativenumber            " Relative line numbers
 set cursorline                " Highlight current line
 set hidden                    " Allow buffer switching without saving
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set smartindent
 set autoindent

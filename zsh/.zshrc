@@ -97,7 +97,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Conditional alias for Kitty terminal
-if [[ -n "$KITTY_WINDOW_ID" ]]; then
+if [[ -n "$KITTY_WINDOW_ID" ]] && [[ -S "${XDG_RUNTIME_DIR:-/tmp}/kitty-${UID}"/* ]]; then
   alias diff="kitty +kitten diff"
   alias ssh="kitty +kitten ssh"
 fi

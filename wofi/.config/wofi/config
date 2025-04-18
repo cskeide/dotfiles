@@ -1,6 +1,5 @@
-show=drun
 allow_images=true
-iimage_size=40
+image_size=40
 width=750
 height=400
 always_parse_args=true

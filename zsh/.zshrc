@@ -51,7 +51,7 @@ autoload -Uz compinit && compinit
 zinit cdreplay -q
 
 # Autosuggest based on both history and completion
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 
 # Keybindings
 bindkey -e

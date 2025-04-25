@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     export PATH="$HOME/bin:$PATH"
@@ -34,6 +41,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Add in zsh plugins
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
@@ -102,11 +110,15 @@ if [[ -n "$KITTY_WINDOW_ID" ]] && [[ -S "${XDG_RUNTIME_DIR:-/tmp}/kitty-${UID}"/
   alias ssh="kitty +kitten ssh"
 fi
 
-# Oh My Posh
-if (xhost >& /dev/null); then
-	eval "$(oh-my-posh init zsh --config /home/cskeide/.cache/oh-my-posh/themes/catppuccin_mocha.omp.json)"
+# Detect TTY console (like /dev/tty1) vs GUI/SSH terminal
+if [[ $(tty) == /dev/tty[0-9]* || "$TERM" == "linux" ]]; then
+  # TTY console — use simple prompt
+  source ~/.zsh/themes/tty-pure.zsh-theme
 else
-	PROMPT='%F{green}%n@%m %F{blue}%1~%f %# '
+  # GUI terminal or SSH with terminal emulator — load Oh My Posh
+  #eval "$(oh-my-posh init zsh --config ~/.zsh/themes/pure.omp.json)"
+  # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 fi
 
 # Set up fzf key bindings and fuzzy completion with catppuchin mocha theme

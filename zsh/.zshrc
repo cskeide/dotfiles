@@ -110,7 +110,7 @@ if [[ -n "$KITTY_WINDOW_ID" ]] && [[ -S "${XDG_RUNTIME_DIR:-/tmp}/kitty-${UID}"/
 fi
 
 # Detect TTY console (like /dev/tty1) vs GUI/SSH terminal
-if [[ $(tty) == /dev/tty[0-9]* || "$TERM" == "linux" ]]; then
+if [[ -n "$SSH_CONNECTION" || $(tty) == /dev/tty[0-9]* || "$TERM" == "linux" ]]; then
   # TTY console — use simple prompt
   source ~/.zsh/themes/tty-pure.zsh-theme
 else

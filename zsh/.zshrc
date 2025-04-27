@@ -109,11 +109,5 @@ if [[ -n "$KITTY_WINDOW_ID" ]] && [[ -S "${XDG_RUNTIME_DIR:-/tmp}/kitty-${UID}"/
   alias ssh="kitty +kitten ssh"
 fi
 
-# Detect TTY console (like /dev/tty1) vs GUI/SSH terminal
-if [[ -n "$SSH_CONNECTION" || $(tty) == /dev/tty[0-9]* || "$TERM" == "linux" ]]; then
-  # TTY console — use simple prompt
-  source ~/.zsh/themes/tty-pure.zsh-theme
-else
-  # GUI terminal or SSH with terminal emulator — load Oh My Posh
-  eval "$(oh-my-posh init zsh --config ~/.zsh/themes/pure.omp.json)"
-fi
+# Oh My Posh
+eval "$(oh-my-posh init zsh --config ~/.zsh/themes/onehalf.minimal.omp.json)"

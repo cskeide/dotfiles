@@ -1,18 +1,27 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
-    "black": "#282c34",
-    "red": "#e06c75",
-    "green": "#98c379",
-    "yellow": "#e5c07b",
-    "blue": "#61afef",
-    "magenta": "#c678dd",
-    "cyan": "#56b6c2",
-    "white": "#dcdfe4",
-    "foreground": "#dcdfe4",
-    "background": "#282c34"
+    "crust": "#11111b",
+    "overlay0": "#6c7086",
+    "red": "#f38ba8",
+    "green": "#a6e3a1",
+    "yellow": "#f9e2af",
+    "blue": "#89b4fa",
+    "lavender": "#b4befe",
+    "peach": "#fab387",
+    "pink": "#f5c2e7",
+    "flamingo": "#f2cdcd",
+    "teal": "#94e2d5",
+    "maroon": "#eba0ac",
+    "mauve": "#cba6f7",
+    "sky": "#89dceb",
+    "sapphire": "#74c7ec",
+    "rosewater": "#f5e0dc",
+    "text": "#cdd6f4",
+    "base": "#1e1e2e",
+    "subtext0": "#a6adc8"
   },
-  "terminal_background": "p:background",
+  "terminal_background": "p:base",
   "console_title_template": "{{ .UserName }}@{{ .HostName }}",
   "blocks": [
     {
@@ -20,9 +29,9 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "p:yellow",
+          "foreground": "p:lavender",
           "style": "plain",
-          "template": "{{ .UserName }}@{{ .HostName }} ",
+          "template": "{{ .UserName }}{{ if .SSHSession }}@{{ .HostName }}{{ end }} ",
           "type": "session"
         },
         {
@@ -42,7 +51,7 @@
             "fetch_worktree_count": true
           },
           "style": "plain",
-          "template": "<p:yellow>git</>:({{ if or (.Working.Changed) (.Staging.Changed) (gt .StashCount 0) }}<p:magenta>{{ .HEAD }}</>{{ else }}<p:green>{{ .HEAD }}</>{{ end }}{{ if (gt .Ahead 0)}}<p:cyan>{{ .BranchStatus }}</>{{ end }}{{ if (gt .Behind 0)}}<p:cyan>{{ .BranchStatus }}</>{{ end }}{{ if .Staging.Changed }} <p:green>{{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }} <p:red>{{ .Working.String }}</>{{ end }})",
+          "template": "<p:subtext0>git</>:({{ if or (.Working.Changed) (.Staging.Changed) (gt .StashCount 0) }}<p:subtext0>{{ .HEAD }}</>{{ else }}<p:subtext0>{{ .HEAD }}</>{{ end }}{{ if (gt .Ahead 0)}}<p:sky>{{ .BranchStatus }}</>{{ end }}{{ if (gt .Behind 0)}}<p:sky>{{ .BranchStatus }}</>{{ end }}{{ if .Staging.Changed }} <p:teal>{{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }} <p:maroon>{{ .Working.String }}</>{{ end }})",
           "type": "git"
         }
       ],
@@ -58,7 +67,7 @@
             "always_enabled": true
           },
           "style": "plain",
-          "template": "{{ if gt .Code 0 }}<p:red>({{ .Code }}) </>{{ else }}<p:green>({{ .Code }}) </>{{ end }}> ",
+          "template": "{{ if gt .Code 0 }}<p:maroon>({{ .Code }}) </>{{ else }}<p:overlay0>({{ .Code }}) </>{{ end }}> ",
           "type": "status"
         }
       ],

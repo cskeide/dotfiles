@@ -51,7 +51,7 @@
             "fetch_worktree_count": true
           },
           "style": "plain",
-          "template": "<p:subtext0>git</>:({{ if or (.Working.Changed) (.Staging.Changed) (gt .StashCount 0) }}<p:maroon>{{ .HEAD }}</>{{ else }}<p:teal>{{ .HEAD }}</>{{ end }}{{ if (gt .Ahead 0)}}<p:teal>{{ .BranchStatus }}</>{{ end }}{{ if (gt .Behind 0)}}<p:teal>{{ .BranchStatus }}</>{{ end }}{{ if .Staging.Changed }} <p:teal>{{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }} <p:maroon>{{ .Working.String }}</>{{ end }})",
+          "template": "<p:subtext0>git</>:({{ if or (.Working.Changed) (.Staging.Changed) (gt .StashCount 0) }}<p:maroon>{{ .HEAD }}</>{{ else }}<p:green>{{ .HEAD }}</>{{ end }}{{ if (gt .Ahead 0)}}<p:green>{{ .BranchStatus }}</>{{ end }}{{ if (gt .Behind 0)}}<p:green>{{ .BranchStatus }}</>{{ end }}{{ if .Staging.Changed }} <p:green>{{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }} <p:maroon>{{ .Working.String }}</>{{ end }})",
           "type": "git"
         }
       ],

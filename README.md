@@ -41,7 +41,7 @@ The `install.sh` script will:
 
 To install:
 ```bash
-git clone https://github.com/your-username/dotfiles.git ~/.dotfiles
+git clone https://github.com/cskeide/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ./install.sh
 ```

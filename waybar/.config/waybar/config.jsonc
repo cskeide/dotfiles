@@ -55,7 +55,6 @@
     "format": " {:%H:%M}",
   },
   "backlight": {
-    "device": "nvidia_0",
     "format": "{icon}",
     "on-scroll-up": "brightnessctl s '+10%'",
     "on-scroll-down": "brightnessctl s '10%-'",

@@ -1,15 +1,15 @@
 #!/bin/bash
 export DOTFILES_DIR
-DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-cd $DOTFILES_DIR
+cd "$DOTFILES_DIR" || exit
 
 # Detect package manager
-if command -v pacman &> /dev/null; then
+if command -v pacman &>/dev/null; then
   package_manager="pacman"
-elif command -v apt-get &> /dev/null; then
+elif command -v apt-get &>/dev/null; then
   package_manager="apt-get"
-elif command -v apt &> /dev/null; then
+elif command -v apt &>/dev/null; then
   package_manager="apt"
 else
   echo "No supported package manager found. Dependencies will not be installed."
@@ -17,10 +17,10 @@ else
 fi
 
 # Install dependencies
-required_packages=(stow zsh neovim tmux starship)
+required_packages=(stow)
 echo "Installing required packages: ${required_packages[*]}"
 for package in "${required_packages[@]}"; do
-  if ! command -v "$package" &> /dev/null; then
+  if ! command -v "$package" &>/dev/null; then
     echo "Installing $package..."
     if [ "$package_manager" = "pacman" ]; then
       sudo pacman -S --noconfirm "$package" || echo "Failed to install $package. Please install it manually."
@@ -45,5 +45,5 @@ for file in ~/.bash_aliases ~/.bash_profile ~/.bashrc ~/.config/fish/config.fish
   fi
 done
 
-rm -vr ~/.bash_aliases ~/.bash_profile ~/.bashrc ~/.config/fish/config.fish ~/.vimrc ~/.nanorc ~/.tmux.conf ~/.config/hypr ~/.config/waybar ~/.config/wofi ~/.config/kitty ~/.config/wlogout ~/.zshrc ~/.config/nvim
+#rm -vr ~/.bash_aliases ~/.bash_profile ~/.bashrc ~/.config/fish/config.fish ~/.vimrc ~/.nanorc ~/.tmux.conf ~/.config/hypr ~/.config/waybar ~/.config/wofi ~/.config/kitty ~/.config/wlogout ~/.zshrc ~/.config/nvim
 stow -v bash fish vim nano tmux hypr waybar wofi kitty wlogout zsh nvim

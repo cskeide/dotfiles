@@ -13,6 +13,7 @@
 - **waybar:** waybar configuration
 - **wlogout:** wlogout configuration
 - **wofi:** wofi menu configuration
+- **yazi:** yazi configuration
 - **zsh:** zsh configuration with zinit and oh my posh
 
 ## About

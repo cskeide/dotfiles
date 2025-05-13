@@ -1,25 +1,26 @@
 # My dotfiles
 
 - **bash:** based on ubuntu and gentoo defaults with some minor modifications
-- **bat:** bat config (cat replacement)
+- **bat:** bat config (cat replacement) with catppuccin theme
 - **fish:** basic fish configuration
 - **ghostty:** ghostty terminal configuration
-- **hypr:** hyprland configuration
+- **hypr:** hyprland, hypridle, hyprlock and hyprpaper configuration
 - **kitty:** kitty terminal configuration
 - **nano:** basic nano configuration
-- **nvim:** nvim configuration with essential plugins
+- **nvim:** nvim configuration using LazyVim
+- **nvim-custom:** nvim configuration with essential plugins
 - **starship:** starship catppuccin theme
-- **tmux:** basic tmux configuration
-- **vim:** basic vim configuration
-- **waybar:** waybar configuration
-- **wlogout:** wlogout configuration
-- **wofi:** wofi menu configuration
-- **yazi:** yazi configuration
+- **tmux:** basic tmux configuration with catppuccin theme
+- **vim:** vim configuration using plugged as plugin manager
+- **waybar:** waybar configuration with catppuccin theme
+- **wlogout:** wlogout configuration with catppuccin theme
+- **wofi:** wofi menu configuration with catppuccin theme
+- **yazi:** yazi configuration with catppuccin theme
 - **zsh:** zsh configuration with zinit and oh my posh
 
 ## About
 
-These dotfiles have primarily been tested on Arch Linux. They are a collection of configurations and tweaks gathered over the years from various sources, combined with personal preferences.
+These dotfiles have primarily been tested on Arch Linux. They are a collection of configurations and tweaks gathered over the years from various sources, combined with personal preferences and catppuccin theming.
 
 ## Using GNU Stow
 

@@ -22,6 +22,10 @@ if ((UID != 0)); then
   alias root='sudo -i'
   alias reboot='sudo systemctl reboot'
   alias poweroff='sudo systemctl poweroff'
+
+  if command -v bat >/dev/null 2>&1; then
+    alias scat='sudo bat --paging=never --style="numbers,changes"'
+  fi
 fi
 
 # misc
@@ -29,12 +33,18 @@ alias df='df -H'
 alias du='du -ch'
 alias free='free -h'
 alias diff='colordiff'
-if command -v difft >/dev/null 2>&1; then
-  alias diff='difft'
-fi
 alias grep='grep --color=auto'
 alias more='less'
 alias ip='ip -c'
+
+if command -v difft >/dev/null 2>&1; then
+  alias diff='difft'
+fi
+if command -v bat >/dev/null 2>&1; then
+  alias cat='bat --paging=never --style="numbers,changes"'
+  alias less='bat'
+  alias more='bat'
+fi
 
 # Safety features
 alias cp='cp -i'

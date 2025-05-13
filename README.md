@@ -1,6 +1,7 @@
 # My dotfiles
 
 - **bash:** based on ubuntu and gentoo defaults with some minor modifications
+- **bat:** bat config (cat replacement)
 - **fish:** basic fish configuration
 - **ghostty:** ghostty terminal configuration
 - **hypr:** hyprland configuration

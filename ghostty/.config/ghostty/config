@@ -1,8 +1,5 @@
 # Font
-font-family = CaskaydiaCove NF Regular
-font-family-bold = CaskaydiaCove NF SemiBold
-font-family-italic = CaskaydiaCove NF Italic
-font-family-bold-italic = CaskaydiaCove NF SemiBold Italic
+font-family = CaskaydiaCove Nerd Font
 font-size = 13
 
 # Window

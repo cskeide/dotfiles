@@ -119,3 +119,6 @@ fi
 
 # Oh My Posh
 eval "$(oh-my-posh init zsh --config ~/.zsh/themes/onehalf.minimal.omp.json)"
+
+# Zoxide shell integration
+eval "$(zoxide init --cmd cd zsh)"

@@ -51,13 +51,15 @@ autoload -Uz compinit && compinit
 zinit cdreplay -q
 
 # Autosuggest based on both history and completion
-ZSH_AUTOSUGGEST_STRATEGY=(completion history)
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Keybindings
 bindkey -e
 bindkey '^[[3~' delete-char
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 

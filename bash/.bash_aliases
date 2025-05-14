@@ -36,6 +36,7 @@ alias diff='colordiff'
 alias grep='grep --color=auto'
 alias more='less'
 alias ip='ip -c'
+alias y='yazi'
 
 if command -v difft >/dev/null 2>&1; then
   alias diff='difft'

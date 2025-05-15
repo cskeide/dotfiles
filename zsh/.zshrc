@@ -87,12 +87,26 @@ alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 
+# Include bash aliases if exists
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
+
+# Conditional alias for Kitty terminal
+if [[ -n "$KITTY_WINDOW_ID" ]] && [[ -S "${XDG_RUNTIME_DIR:-/tmp}/kitty-${UID}"/* ]]; then
+  alias diff="kitty +kitten diff"
+  alias ssh="kitty +kitten ssh"
+fi
+
 # Completion styling
 zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+
+# Oh My Posh
+eval "$(oh-my-posh init zsh --config ~/.zsh/themes/onehalf.minimal.omp.json)"
 
 # Set up fzf key bindings and fuzzy completion with catppuchin mocha theme
 export FZF_DEFAULT_OPTS=" \
@@ -103,26 +117,12 @@ export FZF_DEFAULT_OPTS=" \
 --color=border:#313244,label:#cdd6f4"
 source <(fzf --zsh)
 
-# Include bash aliases if exists
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
-fi
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Conditional alias for Kitty terminal
-if [[ -n "$KITTY_WINDOW_ID" ]] && [[ -S "${XDG_RUNTIME_DIR:-/tmp}/kitty-${UID}"/* ]]; then
-  alias diff="kitty +kitten diff"
-  alias ssh="kitty +kitten ssh"
-fi
-
-# Oh My Posh
-eval "$(oh-my-posh init zsh --config ~/.zsh/themes/onehalf.minimal.omp.json)"
-
 # Zoxide shell integration
 if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init --cmd cd zsh)"
 fi
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && zsh-defer source "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && zsh-defer \. "$NVM_DIR/bash_completion"

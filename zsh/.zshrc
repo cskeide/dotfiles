@@ -33,25 +33,27 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
+# Autosuggest based on both history and completion
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
 # Add in zsh plugins
 zinit light zdharma-continuum/fast-syntax-highlighting
-#zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
-# Add in snippets
-zinit snippet OMZL::git.zsh
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
-zinit snippet OMZP::command-not-found
+# Defer slower or non-essential plugins to improve startup time
+zinit light romkatv/zsh-defer
+
+zsh-defer zinit light zsh-users/zsh-history-substring-search
+zsh-defer zinit snippet OMZL::git.zsh
+zsh-defer zinit snippet OMZP::git
+zsh-defer zinit snippet OMZP::sudo
+zsh-defer zinit snippet OMZP::archlinux
+zsh-defer zinit snippet OMZP::command-not-found
 
 # Load completions
 autoload -Uz compinit && compinit
 zinit cdreplay -q
-
-# Autosuggest based on both history and completion
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Keybindings
 bindkey -e
@@ -60,8 +62,8 @@ bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # History
 HISTSIZE=5000

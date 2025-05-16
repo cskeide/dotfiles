@@ -9,3 +9,6 @@ background-opacity = 0.95
 
 # Theme
 theme = catppuccin-mocha
+
+# Custom keybinds
+# keybind = F11=toggle_fullscreen

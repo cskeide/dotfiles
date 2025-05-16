@@ -98,6 +98,10 @@ if [[ -n "$KITTY_WINDOW_ID" ]] && [[ -S "${XDG_RUNTIME_DIR:-/tmp}/kitty-${UID}"/
   alias ssh="kitty +kitten ssh"
 fi
 
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
 # Completion styling
 zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'

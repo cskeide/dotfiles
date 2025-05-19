@@ -36,6 +36,10 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Autosuggest based on both history and completion
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+# Other variables used bu zsh plugins
+ZOXIDE_CMD_OVERRIDE="cd"
+export NVM_DIR="$HOME/.nvm"
+
 # Add in zsh plugins
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-completions
@@ -50,6 +54,8 @@ zsh-defer zinit snippet OMZP::git
 zsh-defer zinit snippet OMZP::sudo
 zsh-defer zinit snippet OMZP::archlinux
 zsh-defer zinit snippet OMZP::command-not-found
+zsh-defer zinit snippet OMZP::nvm
+zsh-defer zinit snippet OMZP::zoxide
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -98,6 +104,7 @@ if [[ -n "$KITTY_WINDOW_ID" ]] && [[ -S "${XDG_RUNTIME_DIR:-/tmp}/kitty-${UID}"/
   alias ssh="kitty +kitten ssh"
 fi
 
+# Tilix support
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
@@ -120,13 +127,3 @@ export FZF_DEFAULT_OPTS=" \
 --color=selected-bg:#45475a \
 --color=border:#313244,label:#cdd6f4"
 source <(fzf --zsh)
-
-# Zoxide shell integration
-if command -v zoxide >/dev/null 2>&1; then
-  eval "$(zoxide init --cmd cd zsh)"
-fi
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && zsh-defer source "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && zsh-defer \. "$NVM_DIR/bash_completion"

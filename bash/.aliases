@@ -1,8 +1,13 @@
 #
-# ~/.bash_aliases
+# ~/.aliases
 #
 
 # ls aliases
+eval "$(dircolors -b)"
+alias ls='ls --color=auto'
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
 alias la='ls -A'
 alias ll='ls -lAh'
 
@@ -59,4 +64,10 @@ alias chgrp='chgrp --preserve-root'
 # RPi
 if grep -q Raspberry /proc/cpuinfo; then
   alias temp='vcgencmd measure_temp'
+fi
+
+# Conditional alias for Kitty terminal
+if [[ -n "$KITTY_WINDOW_ID" ]] && [[ -S "${XDG_RUNTIME_DIR:-/tmp}/kitty-${UID}"/* ]]; then
+  alias diff="kitty +kitten diff"
+  alias ssh="kitty +kitten ssh"
 fi

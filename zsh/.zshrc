@@ -23,10 +23,3 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 setopt inc_append_history
 setopt hist_expire_dups_first
-
-# Completion styling
-zstyle ':completion:*' squeeze-slashes true
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu select
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'

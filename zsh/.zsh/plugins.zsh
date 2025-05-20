@@ -37,3 +37,10 @@ zsh-defer zinit snippet OMZP::zoxide
 autoload -Uz colors && colors
 autoload -Uz compinit && compinit
 zinit cdreplay -q
+
+# Completion styling
+zstyle ':completion:*' squeeze-slashes true
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu select
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'

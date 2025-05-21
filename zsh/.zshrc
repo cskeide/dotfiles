@@ -3,14 +3,8 @@ if [[ -z "$ZPROFILE_SOURCED" && -f "$HOME/.zprofile" ]]; then
     source "$HOME/.zprofile"
 fi
 
-# Source modular Zsh config files
-[ -f "$HOME/.zsh/plugins.zsh" ] && source "$HOME/.zsh/plugins.zsh"
-[ -f "$HOME/.zsh/keybinds.zsh" ] && source "$HOME/.zsh/keybinds.zsh"
-[ -f "$HOME/.zsh/nvm.zsh" ] && source "$HOME/.zsh/nvm.zsh"
-[ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
-
 # History settings
-HISTSIZE=5000
+HISTSIZE=10000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
@@ -23,3 +17,13 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 setopt inc_append_history
 setopt hist_expire_dups_first
+setopt autocd
+setopt globdots
+setopt auto_menu menu_complete
+
+# Source modular Zsh config files
+[ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
+[ -f "$HOME/.zsh/plugins.zsh" ] && source "$HOME/.zsh/plugins.zsh"
+[ -f "$HOME/.zsh/keybinds.zsh" ] && source "$HOME/.zsh/keybinds.zsh"
+[ -f "$HOME/.zsh/nvm.zsh" ] && source "$HOME/.zsh/nvm.zsh"
+

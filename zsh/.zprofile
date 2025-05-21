@@ -27,5 +27,5 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 # NVM
-export NVM_DIR="$HOME/.nvm"
+#export NVM_DIR="$HOME/.nvm"
 export ZPROFILE_SOURCED=1

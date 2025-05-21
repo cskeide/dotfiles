@@ -13,29 +13,18 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Autosuggest based on both history and completion
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-# Other variables used by zsh plugins
+# Zoxide settings
 ZOXIDE_CMD_OVERRIDE="cd"
-SPACESHIP_PROMPT_ASYNC=true
-SPACESHIP_PROMPT_ADD_NEWLINE=true
 
-# Only load what you actually use
-SPACESHIP_PROMPT_ORDER=(
-    time
-    user
-    dir
-    git
-    line_sep
-    char
-)
 # Add in zsh plugins
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light spaceship-prompt/spaceship-prompt
 
 # Defer slower or non-essential plugins to improve startup time
 zinit light romkatv/zsh-defer
 
-zinit light spaceship-prompt/spaceship-prompt
 zsh-defer zinit light zsh-users/zsh-history-substring-search
 zsh-defer zinit snippet OMZL::git.zsh
 zsh-defer zinit snippet OMZP::git

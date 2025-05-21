@@ -26,6 +26,5 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
-# NVM
-#export NVM_DIR="$HOME/.nvm"
+# Make sure zprofile is sourced only once
 export ZPROFILE_SOURCED=1

@@ -1,0 +1,25 @@
+# Display time
+SPACESHIP_TIME_SHOW=true
+
+# Display username always
+SPACESHIP_USER_SHOW=always
+
+# Do not truncate path in repos
+SPACESHIP_DIR_TRUNC_REPO=false
+
+# Spaceship prompt settings
+SPACESHIP_PROMPT_ASYNC=true
+SPACESHIP_PROMPT_ADD_NEWLINE=true
+SPACESHIP_PROMPT_ORDER=(user host dir git line_sep char)
+SPACESHIP_RPROMPT_ORDER=(time)
+
+# Catppuccin Mocha colors
+SPACESHIP_USER_COLOR="#b4befe"
+SPACESHIP_HOST_COLOR="#cba6f7"
+SPACESHIP_HOST_COLOR_SSH="#cba6f7"
+SPACESHIP_DIR_COLOR="#89b4fa"
+SPACESHIP_TIME_COLOR="#45475a"
+SPACESHIP_GIT_BRANCH_COLOR="#f5c2e7"
+SPACESHIP_GIT_STATUS_COLOR="#f38ba8"
+SPACESHIP_GIT_COMMIT_COLOR="#f9e2af"
+

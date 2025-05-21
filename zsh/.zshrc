@@ -1,4 +1,4 @@
-# Source .zprofile if it exists
+# Source .zprofile if it exists and hasn't been sourced yet
 if [[ -z "$ZPROFILE_SOURCED" && -f "$HOME/.zprofile" ]]; then
     source "$HOME/.zprofile"
 fi
@@ -7,10 +7,9 @@ fi
 [ -f "$HOME/.zsh/plugins.zsh" ] && source "$HOME/.zsh/plugins.zsh"
 [ -f "$HOME/.zsh/keybinds.zsh" ] && source "$HOME/.zsh/keybinds.zsh"
 [ -f "$HOME/.zsh/nvm.zsh" ] && source "$HOME/.zsh/nvm.zsh"
-#[ -f "$HOME/.zsh/prompt.zsh" ] && source "$HOME/.zsh/prompt.zsh"
 [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 
-# History
+# History settings
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE

@@ -1,6 +1,6 @@
 # Source .zprofile if it exists and hasn't been sourced yet
 if [[ -z "$ZPROFILE_SOURCED" && -f "$HOME/.zprofile" ]]; then
-    source "$HOME/.zprofile"
+  source "$HOME/.zprofile"
 fi
 
 # History settings

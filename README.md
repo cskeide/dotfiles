@@ -9,6 +9,7 @@
 - **nano:** basic nano configuration
 - **nvim:** nvim configuration using LazyVim
 - **nvim-custom:** nvim configuration with essential plugins
+- **swaync:** swaync with catppuccin theme
 - **tmux:** basic tmux configuration with catppuccin theme
 - **vim:** vim configuration using plugged as plugin manager
 - **waybar:** waybar configuration with catppuccin theme

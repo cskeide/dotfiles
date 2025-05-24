@@ -39,11 +39,10 @@ backup_dir="$HOME/dotfiles_backup_$(date +%Y%m%d%H%M%S)"
 echo "Backing up existing dotfiles to $backup_dir"
 mkdir -p "$backup_dir"
 
-for file in ~/.bash_aliases ~/.bash_profile ~/.bashrc ~/.config/fish/config.fish ~/.vimrc ~/.nanorc ~/.tmux.conf ~/.config/hypr ~/.config/waybar ~/.config/wofi ~/.config/kitty ~/.config/wlogout ~/.zshrc ~/.config/nvim ~/.config/ghostty ~/.config/yazi ~/.config/bat; do
+for file in ~/.bash_aliases ~/.bash_profile ~/.bashrc ~/.config/fish ~/.vimrc ~/.nanorc ~/.tmux.conf ~/.config/hypr ~/.config/waybar ~/.config/wofi ~/.config/kitty ~/.config/wlogout ~/.zshrc ~/.config/nvim ~/.config/ghostty ~/.config/yazi ~/.config/bat ~/.config/swaync; do
   if [ -e "$file" ]; then
     mv -v "$file" "$backup_dir/"
   fi
 done
 
-#rm -vr ~/.bash_aliases ~/.bash_profile ~/.bashrc ~/.config/fish/config.fish ~/.vimrc ~/.nanorc ~/.tmux.conf ~/.config/hypr ~/.config/waybar ~/.config/wofi ~/.config/kitty ~/.config/wlogout ~/.zshrc ~/.config/nvim
-stow -v bash bat fish vim nano tmux hypr waybar wofi kitty wlogout zsh nvim ghostty yazi
+stow -v bash bat fish vim nano tmux hypr waybar wofi kitty wlogout zsh nvim ghostty yazi swaync

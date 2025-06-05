@@ -11,4 +11,13 @@ background-opacity = 0.95
 theme = catppuccin-mocha
 
 # Custom keybinds
-# keybind = F11=toggle_fullscreen
+keybind = ctrl+r=reload_config
+keybind = f11=toggle_fullscreen
+keybind = ctrl+up=new_split:up
+keybind = ctrl+left=new_split:left
+keybind = ctrl+down=new_split:down
+keybind = ctrl+right=new_split:right
+keybind = alt+up=goto_split:up
+keybind = alt+left=goto_split:left
+keybind = alt+down=goto_split:down
+keybind = alt+right=goto_split:right

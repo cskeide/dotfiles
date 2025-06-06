@@ -31,7 +31,7 @@ zsh-defer zinit snippet OMZP::git
 zsh-defer zinit snippet OMZP::sudo
 zsh-defer zinit snippet OMZP::archlinux
 zsh-defer zinit snippet OMZP::command-not-found
-zsh-defer zinit snippet OMZP::nvm
+#zsh-defer zinit snippet OMZP::nvm
 zsh-defer zinit snippet OMZP::zoxide
 
 # Load completions

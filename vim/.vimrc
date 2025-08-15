@@ -46,9 +46,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" LSP support & autocompletion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 " Syntax highlighting for many languages
 Plug 'sheerun/vim-polyglot'
 

@@ -7,8 +7,9 @@
 - **hypr:** hyprland, hypridle, hyprlock and hyprpaper configuration
 - **kitty:** kitty terminal configuration
 - **nano:** basic nano configuration
-- **nvim:** nvim configuration using LazyVim
-- **nvim-custom:** nvim configuration with essential plugins
+- **nvim:** my current nvim configuration based on the kickstart project
+- **nvim-custom:** custom nvim configuration with essential plugins
+- **nvim-lazyvim:** nvim configuration using LazyVim
 - **swaync:** swaync with catppuccin theme
 - **tmux:** basic tmux configuration with catppuccin theme
 - **vim:** vim configuration using plugged as plugin manager
@@ -16,7 +17,7 @@
 - **wlogout:** wlogout configuration with catppuccin theme
 - **wofi:** wofi menu configuration with catppuccin theme
 - **yazi:** yazi configuration with catppuccin theme
-- **zsh:** zsh configuration with zinit and oh my posh
+- **zsh:** zsh configuration with zinit
 
 ## About
 

@@ -330,7 +330,16 @@ require('lazy').setup({
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
-        -- pickers = {}
+        pickers = {
+          find_files = {
+            hidden = true,
+          },
+          live_grep = {
+            additional_args = function(opts)
+              return { '--hidden' }
+            end,
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -799,16 +808,14 @@ require('lazy').setup({
     name = 'catppuccin',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'catppuccin'
+      ---@diagnostic disable-next-line: missing-fields
       require('catppuccin').setup {
-        flavour = 'mocha', -- Set the desired flavour
+        flavour = 'mocha', -- latte, frappe, macchiato, mocha
         transparent_background = true,
-        float = {
-          transparent = true, -- enable transparent floating windows
-          solid = false, -- use solid styling for floating windows, see |winborder|
-        },
         auto_integrations = true,
       }
+
+      vim.cmd.colorscheme 'catppuccin-mocha'
     end,
   },
 

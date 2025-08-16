@@ -8,8 +8,6 @@
 - **kitty:** kitty terminal configuration
 - **nano:** basic nano configuration
 - **nvim:** my current nvim configuration based on the kickstart project
-- **nvim-custom:** custom nvim configuration with essential plugins
-- **nvim-lazyvim:** nvim configuration using LazyVim
 - **swaync:** swaync with catppuccin theme
 - **tmux:** basic tmux configuration with catppuccin theme
 - **vim:** vim configuration using plugged as plugin manager

@@ -4,7 +4,7 @@ if [[ -z "$ZPROFILE_SOURCED" && -f "$HOME/.zprofile" ]]; then
 fi
 
 # History settings
-HISTSIZE=10000
+HISTSIZE=50000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase

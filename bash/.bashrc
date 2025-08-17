@@ -15,13 +15,19 @@ if [ -d "$HOME/.local/bin" ]; then
   PATH="$HOME/.local/bin:$PATH"
 fi
 
-if [ "$TILIX_ID" ] || [ "$VTE_VERSION" ]; then
-  source /etc/profile.d/vte.sh
-fi
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
 
-# Bash won't get SIGWINCH if another process is in the foreground.
-# Enable checkwinsize so that bash will check the terminal size when
-# it regains control.
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=50000
+HISTFILESIZE=200000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
 # Disable completion when the input buffer is empty.  i.e. Hitting tab
@@ -95,16 +101,14 @@ else
   PS1+='\u@\h \w \$ '
 fi
 
-for sh in /etc/bash/bashrc.d/*; do
-  [[ -r ${sh} ]] && source "${sh}"
-done
-
 # Try to keep environment pollution down, EPA loves us.
 unset use_color sh
 
 # Alias definitions.
 if [ -f ~/.aliases ]; then
   . ~/.aliases
+elif [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
 
 # bash completion

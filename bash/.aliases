@@ -38,12 +38,14 @@ fi
 alias df='df -H'
 alias du='du -ch'
 alias free='free -h'
-alias diff='colordiff'
 alias grep='grep --color=auto'
 alias more='less'
 alias ip='ip -c'
 alias y='yazi'
 
+if command -v colordiff >/dev/null 2>&1; then
+  alias diff='colordiff'
+fi
 if command -v difft >/dev/null 2>&1; then
   alias diff='difft'
 fi

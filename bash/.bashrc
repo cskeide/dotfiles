@@ -120,3 +120,6 @@ bind '"\e[B": history-search-forward'
 
 # suggest package for commands not found
 [[ -f /usr/share/doc/pkgfile/command-not-found.bash ]] && . /usr/share/doc/pkgfile/command-not-found.bash
+
+# fzf bash integration
+eval "$(fzf --bash)"

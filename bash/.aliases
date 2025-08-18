@@ -3,7 +3,7 @@
 # ~/.aliases
 #
 
-# ls aliases
+# Common useful aliases
 eval "$(dircolors -b)"
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
@@ -11,6 +11,8 @@ alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 alias la='ls -A'
 alias ll='ls -lAh'
+alias ..='cd ..'
+alias ...='cd ../..'
 
 # Set 'vi' and 'vim' aliases based on availability
 if command -v nvim >/dev/null 2>&1; then

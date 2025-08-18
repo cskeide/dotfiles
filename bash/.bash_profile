@@ -1,11 +1,6 @@
-#
 # ~/.bash_profile
-#
-
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
+# Some distros (like RHEL) prefer this over .profile
+if [ -r "$HOME/.profile" ]; then
+  . "$HOME/.profile"
 fi
+

@@ -1,15 +1,18 @@
-# ~/.profile -- for login shells (POSIX)
-# Environment vars only, no aliases or shell-specific stuff.
+# ~/.profile
+# This file is sourced by login shells (both Bash and other POSIX shells).
+# Keep this limited to environment variables and simple setup.
+# Shell customizations, aliases, and functions belong in ~/.bashrc.
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ]; then
-	PATH="$HOME/bin:$PATH"
-fi
+# Locale
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ]; then
-	PATH="$HOME/.local/bin:$PATH"
-fi
+# PATH adjustments
+# Put ~/.local/bin and ~/bin at the front if they exist
+for d in "$HOME/.local/bin" "$HOME/bin"; do
+	[ -d "$d" ] && PATH="$d:$PATH"
+done
+export PATH
 
 # Set default EDITOR/VISUAL
 if command -v nvim >/dev/null 2>&1; then
@@ -23,10 +26,10 @@ elif command -v vi >/dev/null 2>&1; then
 	export VISUAL='vi'
 fi
 
-# Locale (if not set system-wide)
-export LANG=en_US.UTF-8
+# Less defaults (quality of life)
+export LESS=-FRX
 
-# Source user bashrc if bash is the shell
+# Source ~/.bashrc for interactive Bash login shells
 if [ -n "$BASH_VERSION" ]; then
 	[ -r "$HOME/.bashrc" ] && . "$HOME/.bashrc"
 fi

@@ -21,10 +21,5 @@ elif command -v vi >/dev/null 2>&1; then
   export VISUAL='vi'
 fi
 
-# Tilix support
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte.sh
-fi
-
 # Make sure zprofile is sourced only once
 export ZPROFILE_SOURCED=1

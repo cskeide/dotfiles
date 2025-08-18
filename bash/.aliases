@@ -62,7 +62,7 @@ if command -v rg &>/dev/null; then
 	alias grep='rg'
 fi
 if command -v yay &>/dev/null; then
-	alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
+	alias yayf="yay -Slq | fzf --multi --preview 'yay -Si {}' --preview-window=down:75% | xargs -ro yay -S"
 fi
 
 # Safety features

@@ -47,7 +47,7 @@ if [ -f /usr/share/git/git-prompt.sh ]; then
 	source /usr/share/git/git-prompt.sh
 	PS1+='$(__git_ps1 " (%s)") \$ '
 else
-	PS1+='\$ '
+	PS1+=' \$ '
 fi
 
 # Alias definitions.

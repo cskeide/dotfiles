@@ -10,8 +10,12 @@ alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 alias la='ls -A'
 alias ll='ls -lAh'
+alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias mkdir='mkdir -p'
 
 # Set 'vi' and 'vim' aliases based on availability
 if command -v nvim >/dev/null 2>&1; then
@@ -39,7 +43,6 @@ fi
 alias df='df -H'
 alias du='du -ch'
 alias free='free -h'
-alias grep='grep --color=auto'
 alias more='less'
 alias ip='ip -c'
 alias y='yazi'
@@ -55,6 +58,12 @@ if command -v bat >/dev/null 2>&1; then
 	alias less='bat'
 	alias more='bat'
 fi
+if command -v rg &>/dev/null; then
+	alias grep='rg'
+fi
+if command -v yay &>/dev/null; then
+	alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
+fi
 
 # Safety features
 alias cp='cp -i'
@@ -64,6 +73,13 @@ alias ln='ln -i'
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
+
+# alias to cleanup unused docker containers, images, networks, and volumes
+alias docker-clean=' \
+  docker container prune -f ; \
+  docker image prune -f ; \
+  docker network prune -f ; \
+  docker volume prune -f '
 
 # RPi
 if grep -q Raspberry /proc/cpuinfo; then

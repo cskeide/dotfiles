@@ -15,7 +15,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias mkdir='mkdir -p'
+alias mkdir='mkdir -pv'
 
 # Set 'vi' and 'vim' aliases based on availability
 if command -v nvim >/dev/null 2>&1; then

@@ -85,3 +85,9 @@ alias docker-clean=' \
 if grep -q Raspberry /proc/cpuinfo; then
 	alias temp='vcgencmd measure_temp'
 fi
+
+# cht.sh
+if command -v cht.sh &>/dev/null; then
+	alias cheat="cht.sh"
+fi
+

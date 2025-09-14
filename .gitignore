@@ -1,8 +1,6 @@
 *.bak
 *.log
 .gitconfig
-monitors.conf
-inputs.conf
 .luarc.json
 spaceship.zsh.zwc
 

@@ -1,13 +1,13 @@
-# Set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-  export PATH="$HOME/bin:$PATH"
-fi
-if [ -d "$HOME/.local/bin" ] ; then
-  export PATH="$HOME/.local/bin:$PATH"
-fi
-if [ -d "/usr/local/bin" ] ; then
-  export PATH="/usr/local/bin:$PATH"
-fi
+# Locale
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# PATH adjustments
+# Put ~/.local/bin and ~/bin at the front if they exist
+for d in "$HOME/.local/bin" "$HOME/bin"; do
+	[ -d "$d" ] && PATH="$d:$PATH"
+done
+export PATH
 
 # Set default EDITOR/VISUAL
 if command -v nvim >/dev/null 2>&1; then
@@ -20,6 +20,9 @@ elif command -v vi >/dev/null 2>&1; then
   export EDITOR='vi'
   export VISUAL='vi'
 fi
+
+# Less defaults (quality of life)
+export LESS=-FRX
 
 # Use systemd-managed ssh-agent
 if [ -z "$SSH_AUTH_SOCK" ]; then

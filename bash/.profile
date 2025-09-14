@@ -29,6 +29,11 @@ fi
 # Less defaults (quality of life)
 export LESS=-FRX
 
+# Use systemd-managed ssh-agent
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+fi
+
 # Source ~/.bashrc for interactive Bash login shells
 if [ -n "$BASH_VERSION" ]; then
 	[ -r "$HOME/.bashrc" ] && . "$HOME/.bashrc"

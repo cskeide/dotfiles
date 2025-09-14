@@ -5,3 +5,7 @@ monitors.conf
 inputs.conf
 .luarc.json
 spaceship.zsh.zwc
+
+# Ignore the hyprland host-specific symlink/folder
+hypr/.config/hypr/host-files
+

@@ -28,4 +28,8 @@ setopt auto_menu menu_complete
 [ -f "$HOME/.zsh/nvm.zsh" ] && source "$HOME/.zsh/nvm.zsh"
 
 # Oh My Posh
+#eval "$(oh-my-posh init zsh --config ~/.zsh/themes/default.omp.json)"
 eval "$(oh-my-posh init zsh --config ~/.zsh/themes/stelbent.omp.json)"
+#eval "$(oh-my-posh init zsh --config ~/.zsh/themes/catppuccin.omp.json)"
+#eval "$(oh-my-posh init zsh --config jandedobbeleer)"
+#eval "$(oh-my-posh init zsh)"

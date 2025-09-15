@@ -28,4 +28,4 @@ setopt auto_menu menu_complete
 [ -f "$HOME/.zsh/nvm.zsh" ] && source "$HOME/.zsh/nvm.zsh"
 
 # Oh My Posh
-eval "$(oh-my-posh init zsh --config stelbent.minimal)"
+eval "$(oh-my-posh init zsh --config ~/.zsh/themes/stelbent.omp.json)"

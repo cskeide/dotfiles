@@ -28,7 +28,7 @@
             "time_format": "15:04:05"
           },
           "template": " <#757575,>|</> {{ .CurrentDate | date .Format }}",
-          "foreground": "#a6e3a1",
+          "foreground": "#a6adc8",
           "type": "time",
           "style": "plain"
         }

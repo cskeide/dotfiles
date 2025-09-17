@@ -36,7 +36,7 @@ show_always = true
 # Shows the hostname
 [hostname]
 ssh_only = true
-format = 'on [$hostname](bold yellow) '
+format = 'at [$hostname](bold yellow) '
 disabled = false
 
 # Shows current directory
@@ -46,12 +46,12 @@ truncation_symbol = '…/'
 home_symbol = '󰋜 ~'
 read_only_style = '197'
 read_only = '  '
-format = 'at [$path]($style)[$read_only]($read_only_style) '
+format = 'in [$path]($style)[$read_only]($read_only_style) '
 
 # Shows current git branch
 [git_branch]
-symbol = ' '
-format = 'via [$symbol$branch]($style)'
+symbol = ' '
+format = 'on [$symbol$branch]($style)'
 # truncation_length = 4
 truncation_symbol = '…/'
 style = 'bold green'

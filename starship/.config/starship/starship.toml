@@ -36,7 +36,7 @@ show_always = true
 
 # Shows the hostname
 [hostname]
-style = "bold lavender"
+style = "bold teal"
 format = 'at [$hostname]($style) '
 ssh_only = true
 disabled = false
@@ -51,7 +51,7 @@ format = 'in [$path]($style)[$read_only]($read_only_style) '
 
 # Shows current git branch
 [git_branch]
-style = "bold subtext0"
+style = "green"
 
 # Shows current git status
 #[git_status]

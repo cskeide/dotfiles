@@ -18,7 +18,7 @@ disabled = false
 # Show OS logo
 [os]
 format = '[$symbol](bold text) '   
-disabled = false
+disabled = true
 
 [os.symbols]
 Windows = ''
@@ -51,7 +51,9 @@ format = 'in [$path]($style)[$read_only]($read_only_style) '
 
 # Shows current git branch
 [git_branch]
-style = "green"
+style = "bold green"
+symbol = ''
+format = 'on [$symbol $branch(:$remote_branch)]($style) '
 
 # Shows current git status
 #[git_status]

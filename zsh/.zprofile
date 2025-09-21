@@ -28,6 +28,3 @@ export LESS=-FRX
 if [ -z "$SSH_AUTH_SOCK" ]; then
   export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 fi
-
-# Make sure zprofile is sourced only once
-export ZPROFILE_SOURCED=1

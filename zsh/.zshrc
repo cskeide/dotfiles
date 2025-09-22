@@ -23,5 +23,4 @@ setopt auto_menu menu_complete
 [ -f "$HOME/.zsh/nvm.zsh" ] && source "$HOME/.zsh/nvm.zsh"
 
 # Starship prompt
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"

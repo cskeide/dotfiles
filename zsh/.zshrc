@@ -21,6 +21,4 @@ setopt auto_menu menu_complete
 [ -f "$HOME/.zsh/plugins.zsh" ] && source "$HOME/.zsh/plugins.zsh"
 [ -f "$HOME/.zsh/keybinds.zsh" ] && source "$HOME/.zsh/keybinds.zsh"
 [ -f "$HOME/.zsh/nvm.zsh" ] && source "$HOME/.zsh/nvm.zsh"
-
-# Starship prompt
-eval "$(starship init zsh)"
+[ -f "$HOME/.zsh/prompt.zsh" ] && source "$HOME/.zsh/prompt.zsh"

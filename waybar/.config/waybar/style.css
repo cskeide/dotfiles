@@ -7,8 +7,7 @@
 }
 
 #waybar {
-  background: @base;
-  color: @text;
+  background: transparent;
   margin: 5px 5px;
 }
 

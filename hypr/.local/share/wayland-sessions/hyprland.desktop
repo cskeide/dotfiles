@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Hyprland
 Comment=An intelligent dynamic tiling Wayland compositor
-Exec=/usr/bin/zsh -l -c Hyprland
+Exec=/usr/bin/bash -c 'source ~/.profile;exec Hyprland'
 Type=Application
 DesktopNames=Hyprland
 Keywords=tiling;wayland;compositor;

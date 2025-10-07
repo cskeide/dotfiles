@@ -20,7 +20,6 @@ ZOXIDE_CMD_OVERRIDE="cd"
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-#zinit light spaceship-prompt/spaceship-prompt
 
 # Defer slower or non-essential plugins to improve startup time
 zinit light romkatv/zsh-defer
@@ -31,7 +30,6 @@ zsh-defer zinit snippet OMZP::git
 zsh-defer zinit snippet OMZP::sudo
 zsh-defer zinit snippet OMZP::archlinux
 zsh-defer zinit snippet OMZP::command-not-found
-#zsh-defer zinit snippet OMZP::nvm
 zsh-defer zinit snippet OMZP::zoxide
 
 # Load completions

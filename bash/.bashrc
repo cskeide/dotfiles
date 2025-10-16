@@ -72,7 +72,7 @@ bind '"\e[B": history-search-forward'
 [[ -f /usr/share/doc/pkgfile/command-not-found.bash ]] && . /usr/share/doc/pkgfile/command-not-found.bash
 
 # Set up fzf key bindings and fuzzy completion with catppuchin mocha theme
-if command -v fzf >/dev/null 2>&1; then
+if fzf --bash >/dev/null 2>&1; then
   export FZF_DEFAULT_OPTS=" \
   --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
   --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
@@ -80,4 +80,11 @@ if command -v fzf >/dev/null 2>&1; then
   --color=selected-bg:#45475a \
   --color=border:#313244,label:#cdd6f4"
 	eval "$(fzf --bash)"
+else
+  # Fallback for older versions of fzf
+  if [[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]]; then
+    source /usr/share/doc/fzf/examples/key-bindings.bash
+  elif [[ -f ~/.fzf.bash ]]; then
+    source ~/.fzf.bash
+  fi
 fi

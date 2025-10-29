@@ -70,10 +70,20 @@ ensure_elephant_running() {
 # Function to launch the application menu
 launch_menu() {
     if is_walker_available && ensure_elephant_running; then
-        walker -m desktopapplications
+        walker
     else
         print_status "$YELLOW" "⚠️  Falling back to wofi..."
         pkill wofi || wofi --conf ~/.config/wofi/config --style ~/.config/wofi/style.css --show drun
+    fi
+}
+
+# Function to launch the app menu
+launch_appmenu() {
+    if is_walker_available && ensure_elephant_running; then
+        walker -m desktopapplications
+    else
+        print_status "$YELLOW" "⚠️  Falling back to wofi..."
+        pkill wofi || wofi --conf ~/.config/wofi/config --style ~/.config/wofi/style.css --show appmenu
     fi
 }
 
@@ -122,11 +132,14 @@ case "$1" in
     "menu")
         launch_menu
         ;;
+    "appmenu")
+        launch_appmenu
+        ;;
     "run")
         launch_runner
         ;;
     *)
-        echo "Usage: $0 [menu|run]"
+        echo "Usage: $0 [menu|run|appmenu]"
         echo "Without arguments: starts the launcher service"
         exit 1
         ;;

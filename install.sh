@@ -39,10 +39,10 @@ backup_dir="$HOME/dotfiles_backup_$(date +%Y%m%d%H%M%S)"
 echo "Backing up existing dotfiles to $backup_dir"
 mkdir -p "$backup_dir"
 
-for file in ~/.bash_aliases ~/.bash_profile ~/.bashrc ~/.config/fish ~/.vimrc ~/.nanorc ~/.tmux.conf ~/.config/hypr ~/.config/waybar ~/.config/wofi ~/.config/kitty ~/.config/wlogout ~/.zshrc ~/.config/nvim ~/.config/ghostty ~/.config/yazi ~/.config/bat ~/.config/swaync; do
+for file in ~/.bash_aliases ~/.bash_profile ~/.bashrc ~/.config/fish ~/.vimrc ~/.nanorc ~/.tmux.conf ~/.config/hypr ~/.config/waybar ~/.config/wofi ~/.config/kitty ~/.config/wlogout ~/.zshrc ~/.config/nvim ~/.config/ghostty ~/.config/yazi ~/.config/bat ~/.config/swaync ~/.config/eza ~/.config/starship ~/.config/walker ~/.ssh; do
   if [ -e "$file" ]; then
     mv -v "$file" "$backup_dir/"
   fi
 done
 
-stow -v bash bat fish vim nano tmux hypr waybar wofi kitty wlogout zsh nvim ghostty yazi swaync
+stow -v bash bat eza fish vim nano tmux hypr waybar wofi kitty wlogout zsh nvim ghostty yazi swaync starship walker ssh

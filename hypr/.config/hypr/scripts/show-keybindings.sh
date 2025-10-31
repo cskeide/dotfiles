@@ -225,4 +225,4 @@ build_keymap_cache
   parse_keycodes |
   parse_bindings |
   prioritize_entries |
-  walker --dmenu -p 'Keybindings' --width 800 --height "$menu_height"
+  walker --dmenu -H -N -p 'Search keybindings' --width 800 --height "$menu_height"

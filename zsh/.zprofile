@@ -7,6 +7,10 @@ export LC_ALL=en_US.UTF-8
 for d in "$HOME/.local/bin" "$HOME/bin"; do
 	[ -d "$d" ] && PATH="$d:$PATH"
 done
+
+# Flutter
+[ -d "$HOME/.local/flutter/bin" ] && PATH="$HOME/.local/flutter/bin:$PATH"
+
 export PATH
 
 # Set default EDITOR/VISUAL

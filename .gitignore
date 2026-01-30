@@ -3,6 +3,7 @@
 .gitconfig
 .luarc.json
 spaceship.zsh.zwc
+.vscode
 
 # Ignore the hyprland host-specific symlink/folder
 hypr/.config/hypr/host-files

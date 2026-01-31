@@ -3,6 +3,13 @@
 
 # Flutter
 [ -d "$HOME/.local/flutter/bin" ] && PATH="$HOME/.local/flutter/bin:$PATH"
+
+# Android SDK
+export ANDROID_HOME="$HOME/Android/Sdk"
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
 export PATH
 
-export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
+# Java
+export JAVA_HOME="/usr/lib/jvm/java-21-openjdk"
+export QT_QPA_PLATFORM=xcb

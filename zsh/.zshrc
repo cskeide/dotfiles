@@ -23,3 +23,4 @@ setopt auto_menu menu_complete
 [ -f "$HOME/.zsh/nvm.zsh" ] && source "$HOME/.zsh/nvm.zsh"
 [ -f "$HOME/.zsh/prompt.zsh" ] && source "$HOME/.zsh/prompt.zsh"
 [ -f "$HOME/.zsh/dev.zsh" ] && source "$HOME/.zsh/dev.zsh"
+

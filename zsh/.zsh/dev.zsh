@@ -3,5 +3,6 @@
 
 # Flutter
 [ -d "$HOME/.local/flutter/bin" ] && PATH="$HOME/.local/flutter/bin:$PATH"
-
 export PATH
+
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable

@@ -23,9 +23,7 @@ fi
 CURRENT_WALL=$(hyprctl hyprpaper listloaded)
 
 # Get a random wallpaper that is not the current one
-WALLPAPER=$(find "$WALLPAPER_DIR" -type f ! -name "$(basename "$CURRENT_WALL")" | shuf -n 1)
-
-WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' -o -iname '*.bmp' -o -iname '*.gif' \) ! -name "$(basename "$CURRENT_WALL")" | shuf -n 1)
+WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' -o -iname '*.bmp' -o -iname '*.gif' \) | shuf -n 1)
 
 # Apply the selected wallpaper
-hyprctl hyprpaper reload ,"$WALLPAPER"
+hyprctl hyprpaper wallpaper ,"$WALLPAPER"

@@ -7,6 +7,7 @@ export LC_ALL=en_US.UTF-8
 for d in "$HOME/.local/bin" "$HOME/bin"; do
 	[ -d "$d" ] && PATH="$d:$PATH"
 done
+
 export PATH
 
 # Set default EDITOR/VISUAL

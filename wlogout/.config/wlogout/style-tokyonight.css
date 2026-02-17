@@ -1,0 +1,56 @@
+* {
+    background-image: none;
+    box-shadow: none;
+    font-family: "Caskaydia Cove NF";
+    font-size: 14pt;
+}
+
+window {
+    background-color: rgba(26, 27, 38, 0.9);
+}
+
+button {
+    border-radius: 30px;
+    border-color: #9d7cd8;
+    text-decoration-color: #c0caf5;
+    color: #c0caf5;
+    background-color: #16161e;
+    border-style: solid;
+    border-width: 2px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    margin: 10px;
+}
+
+button:focus,
+button:active,
+button:hover {
+    /* 20% overlay2, 80% mantle */
+    background-color: rgb(29, 30, 40);
+    outline-style: none;
+}
+
+#lock {
+    background-image: url("icons/lock.svg");
+}
+
+#logout {
+    background-image: url("icons/logout.svg");
+}
+
+#suspend {
+    background-image: url("icons/suspend.svg");
+}
+
+#hibernate {
+    background-image: url("icons/hibernate.svg");
+}
+
+#shutdown {
+    background-image: url("icons/shutdown.svg");
+}
+
+#reboot {
+    background-image: url("icons/reboot.svg");
+}

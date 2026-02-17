@@ -8,7 +8,7 @@ window-padding-y = 10
 background-opacity = 0.95
 
 # Theme
-theme = Catppuccin Mocha
+theme = TokyoNight Night
 
 # Custom keybinds
 keybind = ctrl+shift+r=reload_config

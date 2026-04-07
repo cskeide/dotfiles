@@ -34,12 +34,20 @@ toggle() {
     fi
 }
 
+restart() {
+    for pid in $(get_waybar_pids); do
+        kill "$pid" 2>/dev/null
+    done
+    waybar &
+}
+
 case "$1" in
     show) show ;;
     hide) hide ;;
     toggle) toggle ;;
+    restart) restart ;;
     *)
-        echo "Usage: waybar-ctl {show|hide|toggle}"
+        echo "Usage: waybar-ctl {show|hide|toggle|restart}"
         exit 1
         ;;
 esac

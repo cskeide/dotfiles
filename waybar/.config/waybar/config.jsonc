@@ -2,13 +2,12 @@
   "reload_style_on_change": true,
   "layer": "top",
   "position": "top",
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["custom/music"],
+  "modules-left": ["hyprland/workspaces", "custom/music"],
+  "modules-center": ["clock"],
   "modules-right": [
     "pulseaudio",
     "backlight",
     "battery",
-    "clock",
     "tray",
     "hyprland/language",
     "custom/lock",
@@ -51,8 +50,7 @@
   "clock": {
     "timezone": "Europe/Oslo",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": " {:%d.%m.%Y}",
-    "format": " {:%H:%M}",
+    "format": " {:%d.%m.%Y  %H:%M}",
   },
   "backlight": {
     "device": "intel_backlight",

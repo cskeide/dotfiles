@@ -56,8 +56,8 @@
 
 #clock {
   color: @blue;
-  border-radius: 0px 1rem 1rem 0px;
-  margin-right: 1rem;
+  border-radius: 1rem;
+  margin: 0 1rem;
 }
 
 #battery {
@@ -85,9 +85,13 @@
   color: @yellow;
 }
 
-#backlight,
-#battery {
+#backlight {
   border-radius: 0;
+}
+
+#battery {
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 1rem;
 }
 
 #pulseaudio {

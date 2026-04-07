@@ -49,6 +49,11 @@
   margin: 5px 0;
 }
 
+#custom-lock {
+  border-radius: 0;
+  color: @sky;
+}
+
 #clock {
   color: @blue;
   border-radius: 0px 1rem 1rem 0px;
@@ -64,7 +69,16 @@
 }
 
 #battery.warning:not(.charging) {
+  color: @yellow;
+}
+
+#battery.critical:not(.charging) {
   color: @red;
+  animation: blink 0.5s steps(1) infinite;
+}
+
+@keyframes blink {
+  to { color: @surface0; background-color: @red; }
 }
 
 #backlight {
@@ -80,6 +94,7 @@
   color: @maroon;
   border-radius: 1rem 0px 0px 1rem;
   margin-left: 1rem;
+  padding: 0.5rem 0.6rem 0.5rem 1rem;
 }
 
 #custom-music {

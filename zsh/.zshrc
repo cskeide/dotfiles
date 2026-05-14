@@ -20,9 +20,9 @@ setopt auto_menu menu_complete
 [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 [ -f "$HOME/.zsh/plugins.zsh" ] && source "$HOME/.zsh/plugins.zsh"
 [ -f "$HOME/.zsh/keybinds.zsh" ] && source "$HOME/.zsh/keybinds.zsh"
-[ -f "$HOME/.zsh/nvm.zsh" ] && source "$HOME/.zsh/nvm.zsh"
+[ -f "$HOME/.zsh/fnm.zsh" ] && source "$HOME/.zsh/fnm.zsh"
 [ -f "$HOME/.zsh/prompt.zsh" ] && source "$HOME/.zsh/prompt.zsh"
 [ -f "$HOME/.zsh/dev.zsh" ] && source "$HOME/.zsh/dev.zsh"
 
 # opencode
-export PATH=/home/cskeide/.opencode/bin:$PATH
+export PATH="$HOME/.opencode/bin:$PATH"

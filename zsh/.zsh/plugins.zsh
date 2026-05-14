@@ -32,9 +32,14 @@ zsh-defer zinit snippet OMZP::archlinux
 zsh-defer zinit snippet OMZP::command-not-found
 zsh-defer zinit snippet OMZP::zoxide
 
-# Load completions
+# Load completions — rebuild dump only if newer than 24h
 autoload -Uz colors && colors
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 zinit cdreplay -q
 
 # Completion styling

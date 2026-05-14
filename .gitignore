@@ -8,3 +8,7 @@ spaceship.zsh.zwc
 # Ignore the hyprland host-specific symlink/folder
 hypr/.config/hypr/host-files
 
+# Runtime/generated state — not for version control
+hypr/.config/hypr/.current-theme
+fish/.config/fish/fish_variables
+

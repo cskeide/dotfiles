@@ -8,7 +8,6 @@
 export ANDROID_HOME="$HOME/Android/Sdk"
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
-export PATH
 
 # Java
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk"

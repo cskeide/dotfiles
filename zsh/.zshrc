@@ -24,3 +24,5 @@ setopt auto_menu menu_complete
 [ -f "$HOME/.zsh/prompt.zsh" ] && source "$HOME/.zsh/prompt.zsh"
 [ -f "$HOME/.zsh/dev.zsh" ] && source "$HOME/.zsh/dev.zsh"
 
+# opencode
+export PATH=/home/cskeide/.opencode/bin:$PATH

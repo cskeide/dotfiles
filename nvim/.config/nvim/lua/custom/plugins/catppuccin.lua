@@ -8,6 +8,9 @@ return {
       flavour = 'mocha', -- latte, frappe, macchiato, mocha
       transparent_background = true,
       auto_integrations = true,
+      integrations = {
+        lualine = true,
+      },
     }
 
     vim.cmd.colorscheme 'catppuccin-mocha'

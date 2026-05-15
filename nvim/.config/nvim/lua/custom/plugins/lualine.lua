@@ -1,12 +1,14 @@
-return {
-	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons", "catppuccin/nvim" },
-	config = function()
-		require("lualine").setup({
-			options = {
-				icons_enabled = true,
-				theme = "catppuccin",
-			},
-		})
-	end,
-}
+-- lualine disabled in favour of mini.statusline
+-- return {
+-- 	"nvim-lualine/lualine.nvim",
+-- 	dependencies = { "nvim-tree/nvim-web-devicons", "catppuccin/nvim" },
+-- 	config = function()
+-- 		require("lualine").setup({
+-- 			options = {
+-- 				icons_enabled = true,
+-- 				theme = "catppuccin",
+-- 			},
+-- 		})
+-- 	end,
+-- }
+return {}

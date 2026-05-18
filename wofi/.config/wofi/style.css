@@ -1,8 +1,8 @@
 @import url("./colors.css");
 
 * {
-  font-family: 'CaskaydiaCove NF', monospace;
-  font-size: 12pt;
+  font-family: 'JetBrainsMono NF', 'Noto Sans', monospace;
+  font-size: 14px;
   border-radius;
   10px;
 }

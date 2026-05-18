@@ -6,7 +6,8 @@
 
 * {
   all: unset;
-	font-family: CaskaydiaCove NFM;
+	font-family: JetBrainsMono NF;
+	font-size: 14px;
 }
 
 .normal-icons {

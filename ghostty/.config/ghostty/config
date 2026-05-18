@@ -1,6 +1,7 @@
 # Font
-font-family = CaskaydiaCove NFM
-font-size = 12
+font-family = JetBrainsMono NFM
+font-size = 13
+font-feature = +calt, +liga
 
 # Window
 window-padding-x = 10

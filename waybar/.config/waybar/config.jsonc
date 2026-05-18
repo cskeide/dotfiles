@@ -1,99 +1,174 @@
+// -*- mode: jsonc -*-
 {
-  "reload_style_on_change": true,
-  "layer": "top",
-  "position": "top",
-  "modules-left": ["hyprland/workspaces", "custom/music"],
-  "modules-center": ["clock"],
-  "modules-right": [
-    "pulseaudio",
-    "backlight",
-    "battery",
-    "tray",
-    "hyprland/language",
-    "custom/lock",
-    "custom/power",
-  ],
-  "hyprland/workspaces": {
-    "on-click": "activate",
-    "on-scroll-up": "hyprctl dispatch workspace e-1",
-    "on-scroll-down": "hyprctl dispatch workspace e+1",
-    "format": "{icon}",
-    "all-outputs": false,
-    "format-icons": {
-      "1": "\uf489",
-      "2": "",
-      "3": "\udb82\ude1e",
-      "4": "\uf001",
-      "default": "",
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces", "group/media"],
+    "modules-center": ["clock"],
+    "modules-right": ["hyprland/submap", "group/volume", "battery", "bluetooth", "network", "cpu", "memory", "hyprland/language", "tray", "custom/power"],
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 50,
+        "icon": true,
+        "icon-size": 18
     },
-    "persistent-workspaces": {
-      "*": [2, 3, 4],
-      "DP-1": [1],
-      "DP-4": [1],
-      "DP-5": [1],
+    "hyprland/submap": {
+        "format": "{}",
+        "max-length": 8,
+        "tooltip": false
     },
-  },
-  "tray": {
-    "icon-size": 21,
-    "spacing": 10,
-  },
-  "custom/music": {
-    "format": " {}",
-    "escape": true,
-    "interval": 5,
-    "tooltip": false,
-    "exec": "playerctl metadata --format='{{ title }}'",
-    "exec-if": "playerctl status",
-    "on-click": "playerctl play-pause",
-    "max-length": 50,
-  },
-  "clock": {
-    "timezone": "Europe/Oslo",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": " {:%d.%m.%Y  %H:%M}",
-  },
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon} {percent}%",
-    "on-scroll-up": "brightnessctl s '+10%'",
-    "on-scroll-down": "brightnessctl s '10%-'",
-    "on-click": "((( $(brightnessctl g) == 100 )) && brightnessctl s '0') || (brightnessctl s '+10%')",
-    "format-icons": ["󰃝", "󰃞", "󰃟", "󰃠"],
-  },
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15,
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      // "format": "{icon} {windows}",
+      "format-window-separator": " ",
+      // "window-rewrite": {
+      //  "title<.*youtube.*>": ""
+      // },
+      // "workspace-taskbar": {
+      //     // Enable the workspace taskbar. Default: false
+      //     "enable": true,
+      //
+      //     // If true, the active/focused window will have an 'active' class. Could cause higher CPU usage due to more frequent redraws. Default: false
+      //     "update-active-window": true,
+      //
+      //     // Format of the windows in the taskbar. Default: "{icon}". Allowed variables: {icon}, {title}
+      //     "format": "{icon}",
+      //
+      //     // Icon size in pixels. Default: 16
+      //     "icon-size": 16,
+      //
+      //     // Either the name of an installed icon theme or an array of themes (ordered by priority). If not set, the default icon theme is used.
+      //     // "icon-theme": "some_icon_theme",
+      //
+      //     // Orientation of the taskbar ("horizontal" or "vertical"). Default: "horizontal".
+      //     "orientation": "horizontal",
+      //
+      //     // List of regexes. A window will NOT be shown if its window class or title match one or more items. Default: []
+      //     // "ignore-list": [ "code", "Firefox - .*" ],
+      //
+      //     // Command to run when a window is clicked. Default: "" (switch to the workspace as usual). Allowed variables: {address}, {button}
+      //     // "on-click-window": "/some/arbitrary/script {address} {button}"
+      // }
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": "󰂄 {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{icon} {capacity}%",
-    "format-icons": ["", "", "", "", ""],
-  },
-  "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "{icon} {volume}%",
-    "format-muted": "",
-    "format-icons": {
-      "default": ["", "", " "],
+    "clock": {
+      "format": "󰥔 {:%a, %d. %b %I:%M %p}",
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
+      "calendar": {
+        "format": {
+          "today": "<span color='#73daca'><b>{}</b></span>"
+        }
+      },
+      "on-click": "exec google-chrome-stable --app=https://calendar.google.com"
     },
-    "on-click": "pavucontrol",
-  },
-  "custom/lock": {
-    "tooltip": false,
-    "on-click": "hyprlock &",
-    "format": "",
-  },
-  "custom/power": {
-    "tooltip": false,
-    "on-click": "wlogout &",
-    "format": "⏻",
-  },
-  "hyprland/language": {
-    "format": " {}",
-    "format-en": "en",
-    "format-no": "no",
-    "on-click": "hyprctl switchxkblayout current next",
-  },
+    "bluetooth": {
+      // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+      "format": "",
+      "format-disabled": "", // an empty format will hide the module
+      "format-connected": " {num_connections}",
+      "tooltip-format": "{controller_alias}\t{controller_address}",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+      "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+      "on-click": "exec ghostty -e bluetui",
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {percentage}%",
+        "tooltip-format": "{used:0.1f}G/{total:0.1f}G used",
+        "on-click": "exec ghostty -e htop",
+        "on-click-right": "exec ghostty -e btop"
+    },
+    "network": {
+        "format": "󰤭",
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "󰤭", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "󰖪",
+        "max-length": 50,
+        "on-click": "exec nmrs",
+    },
+    "battery": {
+        // "bat": "BAT2",
+        "interval": 60,
+        "format": "{capacity}% {icon}",
+        "format-icons": {
+            "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+            "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+        },
+    },
+    "cpu": {
+        "interval": 10,
+        "format": " {}%",
+        "max-length": 10,
+        "on-click": "exec ghostty -e btop"
+    },
+    "group/volume": {
+      "orientation": "horizontal",
+      "modules": [
+        "pulseaudio",
+        "pulseaudio/slider"
+      ]
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "ignored-sinks": ["Easy Effects Sink"]
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    "group/media": {
+      "orientation": "horizontal",
+      "modules": [
+        "custom/media-status",
+        "custom/media-now-playing",
+        "custom/media-time"
+      ]
+    },
+    "custom/media-status": {
+      "exec": "~/.config/waybar/custom_modules/media/media-status.sh",
+      "on-click": "playerctl play-pause",
+      "on-click-middle": "playerctl previous",
+      "on-click-right": "playerctl next",
+      "tooltip": false
+    },
+    "custom/media-now-playing": {
+      "exec": "~/.config/waybar/custom_modules/media/media-now-playing.sh",
+      "escape": true,
+      "on-click": "playerctl play-pause",
+      "on-click-middle": "playerctl previous",
+      "on-click-right": "playerctl next",
+      "tooltip": false
+    },
+    "custom/media-time": {
+      "exec": "~/.config/waybar/custom_modules/media/media-time.sh",
+      "interval": 1,
+      "escape": true,
+      "on-click": "playerctl play-pause",
+      "on-click-middle": "playerctl previous",
+      "on-click-right": "playerctl next",
+      "tooltip": false
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+    "hyprland/language": {
+        "format": "󰌌 {short}",
+        "tooltip": false
+    },
+    "custom/power": {
+        "format": "󰐥",
+        "on-click": "wlogout",
+        "tooltip": false
+    }
 }
+

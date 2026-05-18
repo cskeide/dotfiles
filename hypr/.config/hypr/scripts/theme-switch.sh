@@ -23,6 +23,7 @@ declare -A SWAYNC_THEME=( [catppuccin]="style-catppuccin.css" [tokyonight]="styl
 declare -A WLOGOUT_THEME=( [catppuccin]="style-catppuccin.css" [tokyonight]="style-tokyonight.css" )
 declare -A GHOSTTY_THEME=( [catppuccin]="Catppuccin Mocha" [tokyonight]="TokyoNight Night" )
 declare -A WALKER_THEME=( [catppuccin]="catppuccin" [tokyonight]="tokyonight" )
+declare -A WAYBAR_CALENDAR_COLOR=( [catppuccin]="#94e2d5" [tokyonight]="#73daca" )
 
 # Pretty names for notifications
 declare -A THEME_LABEL=( [catppuccin]="Catppuccin Mocha" [tokyonight]="Tokyo Night" )
@@ -85,6 +86,9 @@ fi
 if [[ -f "$WALKER_CONFIG" ]]; then
 	sed -i "s/^theme = .*/theme = \"${WALKER_THEME[$TARGET]}\"/" "$WALKER_CONFIG"
 fi
+
+# Waybar calendar highlight color
+sed -i "s|<span color='#[0-9a-fA-F]*'>|<span color='${WAYBAR_CALENDAR_COLOR[$TARGET]}'>|g" "$WAYBAR_DIR/config.jsonc"
 
 # --- Save current theme ---
 echo "$TARGET" > "$STATE_FILE"

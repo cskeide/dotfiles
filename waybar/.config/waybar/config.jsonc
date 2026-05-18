@@ -3,7 +3,7 @@
     "layer": "top",
     "modules-left": ["hyprland/workspaces", "group/media"],
     "modules-center": ["clock"],
-    "modules-right": ["hyprland/submap", "group/volume", "battery", "bluetooth", "network", "cpu", "memory", "hyprland/language", "tray", "custom/power"],
+    "modules-right": ["hyprland/submap", "group/volume", "battery", "bluetooth", "network", "hyprland/language", "tray", "custom/power"],
     "hyprland/window": {
         "format": "{title}",
         "max-length": 50,

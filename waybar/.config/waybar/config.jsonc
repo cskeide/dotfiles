@@ -63,7 +63,7 @@
         "on-click": "exec nmrs",
     },
     "battery": {
-        // "bat": "BAT2",
+        "bat": "BAT0",
         "interval": 60,
         "format": "{capacity}% {icon}",
         "format-icons": {

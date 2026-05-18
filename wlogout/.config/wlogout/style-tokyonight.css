@@ -11,7 +11,7 @@ window {
 
 button {
     border-radius: 30px;
-    border-color: #9d7cd8;
+    border-color: #73daca;
     text-decoration-color: #c0caf5;
     color: #c0caf5;
     background-color: #16161e;
@@ -32,25 +32,25 @@ button:hover {
 }
 
 #lock {
-    background-image: url("icons/lock.svg");
+    background-image: url("icons-tokyonight/lock.svg");
 }
 
 #logout {
-    background-image: url("icons/logout.svg");
+    background-image: url("icons-tokyonight/logout.svg");
 }
 
 #suspend {
-    background-image: url("icons/suspend.svg");
+    background-image: url("icons-tokyonight/suspend.svg");
 }
 
 #hibernate {
-    background-image: url("icons/hibernate.svg");
+    background-image: url("icons-tokyonight/hibernate.svg");
 }
 
 #shutdown {
-    background-image: url("icons/shutdown.svg");
+    background-image: url("icons-tokyonight/shutdown.svg");
 }
 
 #reboot {
-    background-image: url("icons/reboot.svg");
+    background-image: url("icons-tokyonight/reboot.svg");
 }

@@ -23,7 +23,7 @@ declare -A SWAYNC_THEME=( [catppuccin]="style-catppuccin.css" [tokyonight]="styl
 declare -A WLOGOUT_THEME=( [catppuccin]="style-catppuccin.css" [tokyonight]="style-tokyonight.css" )
 declare -A GHOSTTY_THEME=( [catppuccin]="Catppuccin Mocha" [tokyonight]="TokyoNight Night" )
 declare -A WALKER_THEME=( [catppuccin]="catppuccin" [tokyonight]="tokyonight" )
-declare -A WAYBAR_CALENDAR_COLOR=( [catppuccin]="#94e2d5" [tokyonight]="#73daca" )
+declare -A WAYBAR_CALENDAR_COLOR=( [catppuccin]="#cba6f7" [tokyonight]="#73daca" )
 
 # Pretty names for notifications
 declare -A THEME_LABEL=( [catppuccin]="Catppuccin Mocha" [tokyonight]="Tokyo Night" )
@@ -95,7 +95,7 @@ echo "$TARGET" > "$STATE_FILE"
 
 # --- Reload services ---
 
-# Reload Hyprland
+# Reload Hyprland to pick up new theme colors
 hyprctl reload &>/dev/null || true
 
 # Restart Waybar
@@ -107,8 +107,8 @@ disown
 # Reload swaync
 swaync-client -rs &>/dev/null || true
 
-# Reload Ghostty (SIGUSR1 triggers config reload)
-pkill -USR1 ghostty || true
+# Reload Ghostty config in all running instances
+ghostty +reload-config &>/dev/null || true
 
 # Restart Walker (to pick up new config)
 pkill walker || true

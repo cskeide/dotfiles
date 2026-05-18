@@ -35,7 +35,7 @@ tooltip label {
 }
 
 #workspaces button.active {
-  background: @teal;
+  background: @accent;
   color: @crust;
   font-weight: 700;
 }
@@ -149,6 +149,6 @@ tooltip label {
 #pulseaudio-slider highlight {
   min-width: 10px;
   border-radius: 5px;
-  background: @teal;
+  background: @accent;
 }
 

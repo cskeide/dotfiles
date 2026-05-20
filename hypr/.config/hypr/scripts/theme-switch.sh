@@ -16,7 +16,7 @@ WALKER_CONFIG="$HOME/.config/walker/config.toml"
 STATE_FILE="$HYPR_DIR/.current-theme"
 
 # Map of themes to their source files
-declare -A HYPR_THEME=( [catppuccin]="mocha.conf" [tokyonight]="tokyonight.conf" )
+declare -A HYPR_THEME=( [catppuccin]="mocha.lua" [tokyonight]="tokyonight.lua" )
 declare -A WAYBAR_THEME=( [catppuccin]="mocha.css" [tokyonight]="tokyonight.css" )
 declare -A WOFI_THEME=( [catppuccin]="colors-catppuccin.css" [tokyonight]="colors-tokyonight.css" )
 declare -A SWAYNC_THEME=( [catppuccin]="style-catppuccin.css" [tokyonight]="style-tokyonight.css" )
@@ -61,7 +61,7 @@ echo "Switching to theme: ${THEME_LABEL[$TARGET]}"
 # --- Update symlinks ---
 
 # Hyprland / Hyprlock color definitions
-ln -sf "${HYPR_THEME[$TARGET]}" "$HYPR_DIR/theme.conf"
+ln -sf "${HYPR_THEME[$TARGET]}" "$HYPR_DIR/theme.lua"
 
 # Waybar color definitions
 ln -sf "${WAYBAR_THEME[$TARGET]}" "$WAYBAR_DIR/catppuccin/themes/theme.css"

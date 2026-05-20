@@ -10,5 +10,7 @@ hypr/.config/hypr/host-files
 
 # Runtime/generated state — not for version control
 hypr/.config/hypr/.current-theme
+hypr/.config/hypr/theme.lua
+hypr/.config/hypr/theme.conf
 fish/.config/fish/fish_variables
 

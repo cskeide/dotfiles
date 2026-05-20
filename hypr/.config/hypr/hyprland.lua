@@ -281,6 +281,9 @@ hl.bind(mainMod .. " + CTRL + Down",   hl.dsp.focus({ workspace = "empty" }), { 
 -- Move active workspace to next monitor
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.workspace.move({ monitor = "+1" }), { description = "Move workspace to next monitor" })
 
+-- Toggle left monitor (sydney dual-monitor setup)
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd(hypr_scripts .. "/toggle-left-monitor.sh"), { description = "Toggle left monitor" })
+
 -- Resize windows
 hl.bind(mainMod .. " + SHIFT + Right", hl.dsp.window.resize({ x = 30,  y = 0,   relative = true }), { repeating = true, description = "Resize window right" })
 hl.bind(mainMod .. " + SHIFT + Left",  hl.dsp.window.resize({ x = -30, y = 0,   relative = true }), { repeating = true, description = "Resize window left" })
@@ -300,8 +303,8 @@ hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("brightnessctl s 10%+"),       
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 10%-"),                           { repeating = true, locked = true, description = "Decrease brightness" })
 
 -- Laptop lid switch
-hl.bind("switch:on:Lid Switch",  hl.dsp.exec_cmd("hyprctl keyword monitor eDP-1,disable && sleep 0.5 && " .. hypr_scripts .. "/waybarctl.sh restart"),              { locked = true })
-hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("hyprctl keyword monitor eDP-1,preferred,auto,1.2 && sleep 0.5 && " .. hypr_scripts .. "/waybarctl.sh restart"),  { locked = true })
+hl.bind("switch:on:Lid Switch",  hl.dsp.exec_cmd("hyprctl eval 'hl.monitor({ output = \"eDP-1\", disabled = true })' && sleep 0.5 && " .. hypr_scripts .. "/waybarctl.sh restart"),                                                { locked = true })
+hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("hyprctl eval 'hl.monitor({ output = \"eDP-1\", mode = \"preferred\", position = \"auto\", scale = 1.2, disabled = false })' && sleep 0.5 && " .. hypr_scripts .. "/waybarctl.sh restart"),  { locked = true })
 
 -- Media controls
 hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),        { locked = true, description = "Next track" })

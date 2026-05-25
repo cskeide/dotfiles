@@ -303,7 +303,7 @@ hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("brightnessctl s 10%+"),       
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 10%-"),                           { repeating = true, locked = true, description = "Decrease brightness" })
 
 -- Laptop lid switch
-hl.bind("switch:on:Lid Switch",  hl.dsp.exec_cmd("hyprctl eval 'hl.monitor({ output = \"eDP-1\", disabled = true })' && sleep 0.5 && " .. hypr_scripts .. "/waybarctl.sh restart"),                                                { locked = true })
+hl.bind("switch:on:Lid Switch",  hl.dsp.exec_cmd("hyprctl monitors | grep -v 'eDP-1' | grep -q '^Monitor' && hyprctl eval 'hl.monitor({ output = \"eDP-1\", disabled = true })'; sleep 0.5 && " .. hypr_scripts .. "/waybarctl.sh restart"),                                                { locked = true })
 hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("hyprctl eval 'hl.monitor({ output = \"eDP-1\", mode = \"preferred\", position = \"auto\", scale = 1.2, disabled = false })' && sleep 0.5 && " .. hypr_scripts .. "/waybarctl.sh restart"),  { locked = true })
 
 -- Media controls

@@ -74,6 +74,11 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
+# WireGuard
+alias wgup='sudo wg-quick up wg0'
+alias wgdown='sudo wg-quick down wg0'
+alias wgstat='sudo wg show'
+
 # alias to cleanup unused docker containers, images, networks, and volumes
 alias docker-clean=' \
   docker container prune -f ; \

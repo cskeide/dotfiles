@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
     "layer": "top",
-    "modules-left": ["hyprland/workspaces", "group/media"],
+    "modules-left": ["ext/workspaces", "group/media"],
     "modules-center": ["clock"],
     "modules-right": ["hyprland/submap", "group/volume", "battery", "bluetooth", "network", "hyprland/language", "tray", "custom/power"],
     "hyprland/window": {
@@ -15,16 +15,28 @@
         "max-length": 8,
         "tooltip": false
     },
-    "hyprland/workspaces": {
+    // Switched from hyprland/workspaces to ext/workspaces because
+    // waybar 0.15.0 can't switch workspaces via hyprland/workspaces on
+    // Hyprland 0.55+ (its IPC dispatch now speaks Lua, which this waybar
+    // doesn't send). ext/workspaces uses the wlr ext-workspace protocol
+    // and click-to-switch works. Revert to the block below if a future
+    // waybar regains hyprland/workspaces compatibility. Note: ext/workspaces
+    // does not support format-window-separator or persistent-workspaces.
+    //
+    // "hyprland/workspaces": {
+    //   "format": "{icon}",
+    //   "format-window-separator": " ",
+    //   "persistent-workspaces": {
+    //     "*":     [2, 3, 4, 5],
+    //     "DP-1":  [1],
+    //     "DP-4":  [1],
+    //     "DP-5":  [1],
+    //     "eDP-1": [1, 2, 3, 4, 5]
+    //   }
+    // },
+    "ext/workspaces": {
       "format": "{icon}",
-      "format-window-separator": " ",
-      "persistent-workspaces": {
-        "*":     [2, 3, 4, 5],
-        "DP-1":  [1],
-        "DP-4":  [1],
-        "DP-5":  [1],
-        "eDP-1": [1, 2, 3, 4, 5]
-      }
+      "on-click": "activate"
     },
     "clock": {
       "format": "󰥔 {:%a, %d. %b %H:%M}",
